@@ -1,0 +1,31 @@
+{
+  "name": "kaioandrade",
+  "version": "0.0.1",
+  "homepage": "http://kaioandrade.com",
+  "authors": [
+    "Kaio Andrade <kaioed@gmail.com>"
+  ],
+  "description": "Kaio Andrade's Resume",
+  "main": [
+    "app/css/creative.scss",
+    "app/js/creative.js"
+  ],
+  "keywords": [
+    "kaio",
+    "andrade",
+    "resume"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.5",
+    "fontawesome": "~4.4.0",
+    "jquery": "~2.1.4"
+  }
+}

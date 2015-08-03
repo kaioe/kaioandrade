@@ -1,0 +1,77 @@
+/*default version*/
+@font-face 
+	{
+	font-family: 'Scriptina';
+	src: url('../fonts/scriptina.ttf'); 
+	src: 
+		local('Scriptina'),
+		url('../fonts/scriptina.ttf'), 
+		format('opentype');
+	}
+header 
+	{
+	background-attachment: fixed;
+	}
+.affix-top .navbar-brand
+  {
+    font-size: 3em !important;
+    margin-top: .2em;
+  }
+.navbar-brand
+	{
+	font-family: "Scriptina", Helvetica, sans-serif;
+	font-size: 2em !important;
+	}
+.navbar-default
+	{
+	border: none;
+	}
+.social-links
+	{  
+	position: relative;
+  padding-left: 12px;
+  z-index: 1000;
+  // border: 1px solid #ff0;
+
+	ul
+		{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+		}
+	li
+		{ 
+		display: inline-block;
+    margin-top: 70px;
+    margin-left: 8px;
+		}
+	a
+		{
+    display: block;
+    width: 20px;
+    height: 20px;
+    // border: 1px solid #fff;
+    text-align: center;
+
+		-webkit-transition: all 8s;
+		-moz-transition: all 8s;
+		-ms-transition: all 8s;
+		-o-transition: all 8s;
+		transition: all 8s;
+
+		:hover
+			{
+			color: white;
+			}
+		}
+	}
+.form-control{ 
+  background-color: #F05F40; 
+  color: black;
+
+  &::-webkit-input-placeholder { color: white; }
+  &::-moz-placeholder { color: white; }
+  &:-moz-placeholder { color: white; }
+  &:-ms-input-placeholder { color: white; }
+}
