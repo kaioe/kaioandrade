@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>News Landing - Fortress Surgical</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2c4559",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16191c",
+                        "accent-teal": "#4a7c8c"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .nav-link {
+            @apply text-xs font-bold uppercase tracking-[0.15em] text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors relative py-2;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#121517] dark:text-gray-100 font-display transition-colors duration-300">
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-200 dark:border-gray-800 shadow-sm">
+<div class="max-w-[1440px] mx-auto px-6 h-20 flex items-center justify-between">
+<a class="flex items-center gap-3 group shrink-0" href="#">
+<div class="size-8 text-primary dark:text-white transition-transform group-hover:scale-105">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="text-xl font-extrabold tracking-tighter uppercase leading-none">Fortress</span>
+<span class="text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500 leading-none mt-1">Surgical</span>
+</div>
+</a>
+<nav class="hidden lg:flex items-center gap-8 xl:gap-12">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">About Us</a>
+<a class="nav-link" href="#">Products</a>
+<a class="nav-link" href="#">Services</a>
+<a class="nav-link" href="#">News</a>
+<a class="nav-link" href="#">Contact Us</a>
+</nav>
+<div class="flex items-center gap-6 shrink-0">
+<button class="bg-primary dark:bg-white text-white dark:text-primary px-6 py-2.5 text-[10px] font-black uppercase tracking-[0.2em] rounded-sm hover:opacity-90 transition-all shadow-md">
+                Request Quote
+            </button>
+<button class="lg:hidden material-symbols-outlined">menu</button>
+</div>
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-6 py-12">
+<section class="mb-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden bg-white dark:bg-background-dark shadow-sm">
+<div class="lg:col-span-7 aspect-[16/9] lg:aspect-auto relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High tech robotic surgery interface close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjF7bsr3eJukiUXWTWJVgUHSESTi2Uz9t12yh31O0uuhisKxsAypx6kqniLZrCS7YhCF8qXs8Zv7J1XEy7ssbHEsMxVjs-oHmhgb_8Jzanj9kzePb8TKTIr9xJTj38U82haOM1lwzNrPcVmXGB0bKeepwcnoo4QBqFzBEWI5KhwOy0spWwSMiuhPKsdALL9H8ZucUIhqBrzR3DVlMow_Klq0sDzXFe4DJNemDgzexGfydeg7Ka-EX4EFRm1cfbAp2uctIA9bzWH_Hy')"></div>
+<div class="absolute top-6 left-6 bg-primary text-white text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-sm">Featured Report</div>
+</div>
+<div class="lg:col-span-5 p-10 flex flex-col justify-center gap-6">
+<div class="flex flex-col gap-3">
+<span class="text-xs font-bold text-accent-teal uppercase tracking-widest">Innovation 2024</span>
+<h2 class="text-3xl lg:text-4xl font-extrabold leading-tight text-primary dark:text-white">
+                        Leading the Future of Robotic Surgery: The 2024 Innovation Report
+                    </h2>
+<p class="text-gray-600 dark:text-gray-400 text-base leading-relaxed">
+                        A deep dive into how modular robotic integration is reducing operative time by 22% in complex orthopedic procedures.
+                    </p>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-white px-8 py-3 font-bold text-sm rounded hover:translate-y-[-1px] transition-all">Read Full Report</button>
+<span class="text-xs text-gray-400 font-medium italic">Published March 14, 2024</span>
+</div>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-12">
+<aside class="w-full lg:w-72 flex-shrink-0">
+<div class="sticky top-28 flex flex-col gap-8">
+<div>
+<h3 class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 border-b border-gray-100 dark:border-gray-800 pb-2">Categories</h3>
+<nav class="flex flex-col gap-1">
+<a class="group flex items-center justify-between px-3 py-2.5 rounded bg-primary text-white font-bold text-sm" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">list_alt</span> All News
+                            </span>
+<span class="text-[10px] opacity-60">24</span>
+</a>
+<a class="group flex items-center justify-between px-3 py-2.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium text-sm transition-colors" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">biotech</span> Clinical Trials
+                            </span>
+<span class="text-[10px] text-gray-400">08</span>
+</a>
+<a class="group flex items-center justify-between px-3 py-2.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium text-sm transition-colors" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">business</span> Corporate
+                            </span>
+<span class="text-[10px] text-gray-400">12</span>
+</a>
+<a class="group flex items-center justify-between px-3 py-2.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-400 font-medium text-sm transition-colors" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span> Innovations
+                            </span>
+<span class="text-[10px] text-gray-400">04</span>
+</a>
+</nav>
+</div>
+<div class="bg-primary/5 dark:bg-white/5 p-6 rounded-lg border border-primary/10">
+<h4 class="text-sm font-extrabold mb-2">Clinical Insights</h4>
+<p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-4">Get the latest surgical research delivered to your inbox.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800 rounded text-xs focus:ring-primary focus:border-primary" placeholder="Work email" type="email"/>
+<button class="bg-primary text-white py-2.5 text-xs font-bold rounded">Subscribe</button>
+</div>
+</div>
+<div>
+<h3 class="text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-4 border-b border-gray-100 dark:border-gray-800 pb-2">Archive</h3>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-bold text-primary border border-primary/20 px-3 py-1 rounded-full cursor-pointer hover:bg-primary/5 transition-colors">2024</span>
+<span class="text-xs font-medium text-gray-400 border border-transparent px-3 py-1 rounded-full cursor-pointer hover:text-primary transition-colors">2023</span>
+<span class="text-xs font-medium text-gray-400 border border-transparent px-3 py-1 rounded-full cursor-pointer hover:text-primary transition-colors">2022</span>
+</div>
+</div>
+</div>
+</aside>
+<section class="flex-1">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-extrabold text-primary dark:text-white">Latest Updates</h2>
+<div class="flex items-center gap-2 text-xs font-bold text-gray-400">
+                    Sort by: <span class="text-primary dark:text-white cursor-pointer flex items-center gap-1">Newest <span class="material-symbols-outlined text-[14px]">expand_more</span></span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[16/10] bg-gray-200 overflow-hidden rounded shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Medical device certification document and FDA logo" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAkkSYmqXFRoQ2W5nd4PlHg4zAJx36h_M1EGlDejQDawqJ7DqDyp7GjgAjv8FMI3uRWZLFpTiNpi1Sthjcurf-XnKQ5lsWXMLebo3SzOP9slq1w5IstplQoMUX-JB9Gv5yG0X_hiaiRW3WkM_IAKhK-3EqCJW0Ninn_o5sjjPoSEHS4P-xdfe1PZyGhOLZJjIthNjU7tk3Yr-jVF8R1aS9xZqFEV1I44UwLLFe2ADdfNdW790E7ICxmTzHlhRpg6bhhvlrT3EKEgRIW')"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-teal">Regulatory</span>
+<span class="text-[10px] text-gray-400 font-medium">March 10, 2024</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">New FDA Approval for Fortress Spine System</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">The V3 Titanium Mesh receives 510(k) clearance for anterior lumbar interbody fusion procedures.</p>
+</div>
+</article>
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[16/10] bg-gray-200 overflow-hidden rounded shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Financial growth chart on a digital screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARXoguXuvCKsawhz1fTRXd3bPPmlTmunqrIFL1WAjveW2CTjSMFuEqMuWCn_H6vhGUYyptlB_nAw_fR0PHuxvn43GzSbTpDYveTKLGZ6NEG8BC1iQzFn5B2zTJW5W2kJbyq4uATmXHiqT8hbIjAX_1-b_75bKKRWbtkXRRmdtf_VyEZlXAstassQjlm4VNA1Va3mKCkd8iCSKhmBH4IrIisrgseQFlH4BetVBXzE4FExB492iOfAWPkVgGAKDuPXTytBYY8Gvtd72S')"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-teal">Corporate</span>
+<span class="text-[10px] text-gray-400 font-medium">March 02, 2024</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">Quarterly Earnings &amp; Strategic Expansion Update</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Fortress Surgical reports 18% YoY growth with new distribution centers opening in Munich and Singapore.</p>
+</div>
+</article>
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[16/10] bg-gray-200 overflow-hidden rounded shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Microscopic view of tissue for clinical study" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjQys1UyzQ5VsMxokJzyOZ94J7L0qzKEl-rZEpBVxt9y0RmmD4bghBz9Amb0GnL-N7X7WvBDDVkJ-K2wuL7kvqWulsJwGjf0i1MUL29ANjovT2-eZiyOFUKo5iM1IiyDKOe8HW9AWxIzkdmefnuxa1jChfDsRIG3FAuJ8lYejPg-uWO84frS08wys9pZ8hnAl-QKoskwh4sF8SDMT7BcrEDLfNCbtdgUZzxXMKxzGXSFIQrvQWc3j1q9IKxfsjkYicZAQb8A00EM-f')"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-teal">Clinical Research</span>
+<span class="text-[10px] text-gray-400 font-medium">Feb 24, 2024</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">Clinical Study: Efficacy of Minimalist Incision Techniques</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Peer-reviewed findings show significant reduction in post-operative recovery time using Fortress precision tooling.</p>
+</div>
+</article>
+<article class="flex flex-col gap-4 group cursor-pointer">
+<div class="aspect-[16/10] bg-gray-200 overflow-hidden rounded shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Surgeons training with new medical equipment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9wuHZoLvcep0qgTFGTt7CrlAirXgazN2Ne6D3TpDuu_QmGjZL7PCodAzKpTgXXgYKIaeMscjSmMAi6zkClksbQUeVR8SjuxgwZn8WvqZUwjYqo7njyG9sp4XBF5mAgfliANNV7y6yVwjGK1PQCZfP63IJct0W2H9xq2-bJo83IO3XfrjBHLzqVEUO8R2RC8JMhmgnYo-A94aU5SLtFnmZDCjlQH_fJRxdd14wFKKqLBZPsxvg9Fc6A-d8zzO4eGZDrM6iUcrXYhBg')"></div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-black uppercase tracking-widest text-accent-teal">Events</span>
+<span class="text-[10px] text-gray-400 font-medium">Feb 15, 2024</span>
+</div>
+<h3 class="text-xl font-bold leading-tight group-hover:text-primary transition-colors">Hands-On Workshops: Upcoming Global Tour</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Join our chief engineers for intensive training sessions across 12 major medical hubs worldwide.</p>
+</div>
+</article>
+</div>
+<div class="mt-16 flex justify-center">
+<button class="flex items-center gap-2 border-2 border-primary text-primary px-10 py-3 font-extrabold text-sm rounded hover:bg-primary hover:text-white transition-all">
+                    Load More Articles <span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+</section>
+</div>
+</main>
+<footer class="mt-20 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark py-16">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+<div class="md:col-span-4">
+<div class="flex items-center gap-3 mb-8">
+<div class="size-6 text-primary dark:text-white">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<div class="flex flex-col leading-tight">
+<span class="text-lg font-extrabold uppercase tracking-tighter">Fortress</span>
+<span class="text-[8px] font-bold tracking-[0.3em] uppercase text-gray-500">Surgical</span>
+</div>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-sm">
+                    Providing high-performance surgical instrumentation and modular robotic solutions for advanced clinical outcomes across global healthcare systems.
+                </p>
+<div class="flex gap-4">
+<a class="size-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-400" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="size-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-400" href="#">
+<span class="material-symbols-outlined text-lg">share</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-8">Products</h5>
+<ul class="flex flex-col gap-4 text-sm font-bold text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Spine Systems</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Orthopedic</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Instruments</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Biologics</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-8">Resources</h5>
+<ul class="flex flex-col gap-4 text-sm font-bold text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">Clinical Data</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Training</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">News</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-8">Company</h5>
+<ul class="flex flex-col gap-4 text-sm font-bold text-gray-600 dark:text-gray-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Legal</a></li>
+</ul>
+</div>
+<div class="md:col-span-2">
+<h5 class="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-8">Headquarters</h5>
+<p class="text-sm font-bold text-gray-600 dark:text-gray-400 leading-loose">
+                    1200 Innovation Drive<br/>
+                    Cambridge, MA 02139<br/>
+                    USA
+                </p>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">© 2024 Fortress Surgical Inc. All rights reserved.</p>
+<div class="flex gap-8 text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Use</a>
+<a class="hover:text-primary" href="#">Compliance</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

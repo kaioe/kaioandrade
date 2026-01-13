@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Lines | Fortress Surgical</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2c4559",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16191c",
+                        "accent-teal": "#00A896"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .active-sidebar-item {
+            border-right: 3px solid #2c4559;
+        }
+        .nav-link {
+            @apply text-[10px] font-black uppercase tracking-[0.2em] text-[#637483] hover:text-primary transition-colors py-2;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#121517] dark:text-gray-100 antialiased">
+<header class="sticky top-0 z-50 w-full border-b border-[#ebedf0] dark:border-gray-800 bg-white dark:bg-background-dark px-6 lg:px-12 py-6">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3 text-primary dark:text-gray-100 flex-1">
+<div class="size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-black leading-tight tracking-tight uppercase">Fortress Surgical</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10 justify-center flex-[2]">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">About Us</a>
+<a class="nav-link" href="#">Products</a>
+<a class="nav-link" href="#">Services</a>
+<a class="nav-link" href="#">News</a>
+<a class="nav-link" href="#">Contact Us</a>
+</nav>
+<div class="flex items-center justify-end gap-8 flex-1">
+<button class="hidden lg:flex items-center text-[#637483] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="px-7 py-3 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] rounded hover:bg-primary/90 transition-all shadow-md">
+                Request Quote
+            </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto flex min-h-screen">
+<aside class="hidden lg:flex w-72 flex-col border-r border-[#ebedf0] dark:border-gray-800 p-8 space-y-8 bg-white dark:bg-background-dark">
+<div>
+<h3 class="text-xs font-black text-primary/50 dark:text-gray-400 uppercase tracking-widest mb-4">Navigation</h3>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded bg-primary/5 dark:bg-primary/20 active-sidebar-item">
+<span class="material-symbols-outlined text-primary dark:text-white">grid_view</span>
+<p class="text-sm font-bold text-primary dark:text-white">Product Lines</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary">inventory_2</span>
+<p class="text-sm font-medium text-[#637483] group-hover:text-primary">Full Catalog</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex flex-col gap-1">
+<h3 class="text-xs font-black text-primary/50 dark:text-gray-400 uppercase tracking-widest mb-4">Categories</h3>
+<div class="flex items-center justify-between px-3 py-2 text-primary font-bold bg-primary/5 rounded">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">stethoscope</span>
+<span class="text-sm">Surgical Instruments</span>
+</div>
+<span class="material-symbols-outlined scale-75">expand_more</span>
+</div>
+<div class="pl-11 flex flex-col gap-1 py-1">
+<a class="text-xs py-1.5 text-primary/70 hover:text-primary font-medium" href="#">Cutting &amp; Dissecting</a>
+<a class="text-xs py-1.5 text-primary/70 hover:text-primary font-medium" href="#">Grasping &amp; Holding</a>
+<a class="text-xs py-1.5 text-primary/70 hover:text-primary font-medium" href="#">Retracting &amp; Exposing</a>
+</div>
+<div class="flex items-center justify-between px-3 py-2 text-[#637483] hover:text-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">orthopedics</span>
+<span class="text-sm font-medium">Implants &amp; Prosthetics</span>
+</div>
+<span class="material-symbols-outlined scale-75">chevron_right</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2 text-[#637483] hover:text-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-sm font-medium">Patient Monitoring</span>
+</div>
+<span class="material-symbols-outlined scale-75">chevron_right</span>
+</div>
+<div class="flex items-center justify-between px-3 py-2 text-[#637483] hover:text-primary transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined">door_front</span>
+<span class="text-sm font-medium">OR Equipment</span>
+</div>
+<span class="material-symbols-outlined scale-75">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-8 border-t border-gray-100 dark:border-gray-800">
+<div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+<p class="text-xs font-bold text-primary dark:text-gray-200 mb-2 uppercase">Technical Support</p>
+<p class="text-[11px] leading-relaxed text-[#637483] mb-3">Access clinical manuals and sterile processing guides.</p>
+<button class="w-full py-2 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded text-[11px] font-bold uppercase tracking-wider hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors">Documentation</button>
+</div>
+</div>
+</aside>
+<section class="flex-1 flex flex-col bg-[#f9fafa] dark:bg-background-dark/50 overflow-y-auto">
+<div class="px-8 pt-8">
+<div class="flex items-center gap-2 text-xs font-bold tracking-wider uppercase">
+<a class="text-[#637483] hover:text-primary transition-colors" href="#">Home</a>
+<span class="text-[#cbd1d6] material-symbols-outlined scale-50">chevron_right</span>
+<span class="text-primary dark:text-white">Product Lines</span>
+</div>
+</div>
+<div class="px-8 py-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-black text-primary dark:text-white leading-tight tracking-[-0.04em] mb-4">Product Lines</h1>
+<p class="text-lg text-[#637483] dark:text-gray-400 font-normal leading-relaxed">
+                    Precision-engineered surgical solutions designed for the highest clinical outcomes across multiple disciplines.
+                </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-bold text-[#637483] hover:bg-gray-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined scale-90">filter_list</span>
+                    Filter
+                </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-sm font-bold text-[#637483] hover:bg-gray-50 transition-colors shadow-sm">
+<span class="material-symbols-outlined scale-90">sort</span>
+                    A-Z
+                </button>
+</div>
+</div>
+<div class="px-8 mb-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/40 group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-white dark:bg-gray-800 border-none rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] focus:ring-2 focus:ring-primary/20 text-base font-medium placeholder:text-gray-400" placeholder="Quick find a category or instrument model..." type="text"/>
+</div>
+</div>
+<div class="px-8 pb-20">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<div class="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">precision_manufacturing</span>
+</div>
+<div class="absolute top-4 left-4 bg-primary/90 text-white text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded">New Tech</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-black text-primary dark:text-white mb-2 tracking-tight">Robotic-Assisted Tools</h3>
+<p class="text-sm text-[#637483] dark:text-gray-400 leading-relaxed mb-6">Advanced micro-instrumentation compatible with major robotic surgical platforms.</p>
+<button class="w-full py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded hover:bg-accent-teal transition-colors flex items-center justify-center gap-2">
+                            View Products
+                            <span class="material-symbols-outlined scale-75">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">skeleton</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-black text-primary dark:text-white mb-2 tracking-tight">Spinal Fixation Systems</h3>
+<p class="text-sm text-[#637483] dark:text-gray-400 leading-relaxed mb-6">Titanium and PEEK implants for posterior and anterior stabilization procedures.</p>
+<button class="w-full py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded hover:bg-accent-teal transition-colors flex items-center justify-center gap-2">
+                            View Products
+                            <span class="material-symbols-outlined scale-75">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">bolt</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-black text-primary dark:text-white mb-2 tracking-tight">Electrosurgical Units</h3>
+<p class="text-sm text-[#637483] dark:text-gray-400 leading-relaxed mb-6">High-frequency energy delivery systems for monopolar and bipolar cutting/coagulation.</p>
+<button class="w-full py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded hover:bg-accent-teal transition-colors flex items-center justify-center gap-2">
+                            View Products
+                            <span class="material-symbols-outlined scale-75">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+<div class="aspect-video bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-800 dark:to-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-600">cardiology</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-black text-primary dark:text-white mb-2 tracking-tight">Vascular Access</h3>
+<p class="text-sm text-[#637483] dark:text-gray-400 leading-relaxed mb-6">Guidewires, catheters, and specialized clamps for complex cardiovascular surgery.</p>
+<button class="w-full py-3 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded hover:bg-accent-teal transition-colors flex items-center justify-center gap-2">
+                            View Products
+                            <span class="material-symbols-outlined scale-75">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-dashed">
+<div class="aspect-video bg-gray-50 dark:bg-gray-900 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+<div class="text-center space-y-2">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-700 text-4xl">add_circle</span>
+<p class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">Expansion Pending</p>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-black text-gray-300 dark:text-gray-700 mb-2 tracking-tight">Ophthalmic Suite</h3>
+<p class="text-sm text-gray-300 dark:text-gray-700 leading-relaxed mb-6">Coming Q3: specialized micro-surgical instruments for cataract and vitreoretinal surgery.</p>
+<button class="w-full py-3 bg-gray-100 text-gray-300 text-xs font-bold uppercase tracking-widest rounded cursor-not-allowed">
+                            Coming Soon
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-primary text-gray-400 py-20 px-8 lg:px-20 border-t border-white/5">
+<div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+<div class="space-y-6">
+<div class="flex items-center gap-3 text-white">
+<div class="size-6">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-base font-black uppercase tracking-[0.2em]">Fortress Surgical</span>
+</div>
+<p class="text-xs leading-relaxed max-w-xs">Defining the standard in surgical precision through architectural excellence in medical device engineering. Since 1994.</p>
+</div>
+<div>
+<h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-8">Corporate</h4>
+<nav class="flex flex-col gap-4 text-xs">
+<a class="hover:text-white transition-colors" href="#">About Our Process</a>
+<a class="hover:text-white transition-colors" href="#">Clinical Partners</a>
+<a class="hover:text-white transition-colors" href="#">Regulatory Affairs</a>
+<a class="hover:text-white transition-colors" href="#">Quality Assurance</a>
+<a class="hover:text-white transition-colors" href="#">Investor Relations</a>
+</nav>
+</div>
+<div>
+<h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-8">Resources</h4>
+<nav class="flex flex-col gap-4 text-xs">
+<a class="hover:text-white transition-colors" href="#">Technical Manuals</a>
+<a class="hover:text-white transition-colors" href="#">Sterilization Protocols</a>
+<a class="hover:text-white transition-colors" href="#">IFU Library</a>
+<a class="hover:text-white transition-colors" href="#">Training Modules</a>
+<a class="hover:text-white transition-colors" href="#">Safety Data Sheets</a>
+</nav>
+</div>
+<div>
+<h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-8">Contact</h4>
+<div class="space-y-4 text-xs">
+<p>Global Headquarters<br/>8200 Innovation Way<br/>Austin, TX 78726</p>
+<p>support@fortress-surgical.com<br/>+1 (800) 555-0198</p>
+</div>
+<div class="flex gap-4 mt-8">
+<div class="size-9 rounded bg-white/5 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all border border-white/10">
+<span class="material-symbols-outlined scale-75">share</span>
+</div>
+<div class="size-9 rounded bg-white/5 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-all border border-white/10">
+<span class="material-symbols-outlined scale-75">mail</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[10px] font-medium tracking-wider uppercase">© 2024 Fortress Surgical Holdings. All rights reserved.</p>
+<div class="flex gap-8 text-[10px] font-medium tracking-wider uppercase">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Use</a>
+<a class="hover:text-white transition-colors" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+
+</body></html>

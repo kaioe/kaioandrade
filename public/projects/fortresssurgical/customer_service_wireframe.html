@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Service | Fortress Surgical</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2c4559",
+                        "accent-teal": "#00A896",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16191c",
+                        "border-muted": "#d6dce0",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .nav-link {
+            @apply text-[11px] font-black uppercase tracking-[0.15em] text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-white transition-colors relative py-2;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<header class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-border-muted dark:border-slate-800">
+<div class="max-w-[1400px] mx-auto px-8 h-20 flex items-center justify-between">
+<div class="flex items-center">
+<a class="flex items-center gap-3 text-primary dark:text-white group" href="#">
+<div class="w-10 h-10 bg-primary dark:bg-white flex items-center justify-center rounded">
+<span class="material-symbols-outlined text-white dark:text-primary text-2xl group-hover:rotate-45 transition-transform duration-300">architecture</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-xl font-black tracking-tighter uppercase leading-none">Fortress</h1>
+<span class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-60 leading-none mt-1">Surgical</span>
+</div>
+</a>
+</div>
+<nav class="hidden lg:flex items-center gap-8">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">About Us</a>
+<a class="nav-link" href="#">Products</a>
+<a class="nav-link" href="#">Services</a>
+<a class="nav-link" href="#">News</a>
+<a class="nav-link" href="#">Contact Us</a>
+</nav>
+<div class="flex items-center">
+<button class="bg-primary dark:bg-white text-white dark:text-primary px-8 py-3 rounded text-[11px] font-black tracking-[0.15em] uppercase hover:bg-accent-teal dark:hover:bg-accent-teal dark:hover:text-white transition-all shadow-lg shadow-primary/10">
+                Request Quote
+            </button>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-6 py-12">
+<section class="mb-16">
+<div class="bg-white dark:bg-slate-900 border border-border-muted dark:border-slate-800 p-8 md:p-16 rounded shadow-sm flex flex-col md:flex-row items-center gap-12 overflow-hidden relative">
+<div class="flex-1 z-10">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary dark:bg-primary/30 dark:text-white text-[10px] font-black tracking-widest uppercase mb-4 rounded-sm">Support Center</span>
+<h2 class="text-4xl md:text-5xl font-extrabold text-primary dark:text-white leading-tight tracking-tighter mb-6">
+                    Uncompromising Support for Precision Instruments
+                </h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl">
+                    Our customer service philosophy prioritizes uptime and reliability to ensure your surgical instruments are always ready for the operating room.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary text-white px-6 py-3 rounded font-bold text-sm tracking-wide hover:bg-primary/90 transition-colors uppercase">VIEW DOCUMENTATION</button>
+<button class="border border-primary text-primary dark:text-white dark:border-white px-6 py-3 rounded font-bold text-sm tracking-wide hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors uppercase">SERVICE REQUEST</button>
+</div>
+</div>
+<div class="flex-1 w-full h-64 md:h-auto bg-slate-100 dark:bg-slate-800 rounded relative overflow-hidden flex items-center justify-center border-dashed border-2 border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-8xl text-slate-300 dark:text-slate-700">precision_manufacturing</span>
+</div>
+</div>
+</section>
+<section class="mb-16">
+<div class="max-w-3xl mx-auto">
+<label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 text-center">How can we help you today?</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary text-2xl">search</span>
+<input class="w-full h-16 bg-white dark:bg-slate-900 border border-border-muted dark:border-slate-800 rounded-lg pl-14 pr-6 text-lg focus:ring-2 focus:ring-primary shadow-sm" placeholder="Search support topics, documentation, or FAQs..." type="text"/>
+</div>
+</div>
+</section>
+<section class="mb-20">
+<div class="flex items-end justify-between mb-8 px-2">
+<div>
+<h2 class="text-2xl font-extrabold text-primary dark:text-white tracking-tight">Maintenance &amp; Technical Services</h2>
+<p class="text-slate-500 text-sm mt-1">Professional upkeep for critical surgical ecosystems.</p>
+</div>
+<a class="text-accent-teal font-bold text-xs uppercase tracking-widest hover:underline" href="#">View All Tiers</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="group bg-white dark:bg-slate-900 border border-border-muted dark:border-slate-800 p-8 rounded hover:border-primary transition-all hover:shadow-md">
+<div class="w-12 h-12 bg-slate-50 dark:bg-slate-800 flex items-center justify-center rounded mb-6 group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary dark:text-white">content_paste_search</span>
+</div>
+<h3 class="text-lg font-bold text-primary dark:text-white mb-2">Routine Inspection</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Scheduled health checks for instrument longevity and preventative wear analysis.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> Bi-annual checkups</li>
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> Integrity verification</li>
+</ul>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xs rounded uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Book Now</button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-border-muted dark:border-slate-800 p-8 rounded hover:border-primary transition-all hover:shadow-md">
+<div class="w-12 h-12 bg-slate-50 dark:bg-slate-800 flex items-center justify-center rounded mb-6 group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary dark:text-white">build</span>
+</div>
+<h3 class="text-lg font-bold text-primary dark:text-white mb-2">Emergency Repair</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Rapid response and restoration for surgical tools to minimize procedure downtime.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> 24h turnaround</li>
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> On-site loaners</li>
+</ul>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xs rounded uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Emergency Line</button>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-border-muted dark:border-slate-800 p-8 rounded hover:border-primary transition-all hover:shadow-md">
+<div class="w-12 h-12 bg-slate-50 dark:bg-slate-800 flex items-center justify-center rounded mb-6 group-hover:bg-primary/10">
+<span class="material-symbols-outlined text-primary dark:text-white">biotech</span>
+</div>
+<h3 class="text-lg font-bold text-primary dark:text-white mb-2">Calibration</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Precision alignment for robotic and electronic systems with certified documentation.</p>
+<ul class="space-y-2 mb-8">
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> ISO Compliance</li>
+<li class="flex items-center gap-2 text-xs font-medium text-slate-500"><span class="material-symbols-outlined text-accent-teal text-sm">check_circle</span> Digital logs</li>
+</ul>
+<button class="w-full py-2 bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-xs rounded uppercase tracking-widest group-hover:bg-primary group-hover:text-white transition-colors">Schedule</button>
+</div>
+</div>
+</section>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="flex-[2]">
+<h2 class="text-2xl font-extrabold text-primary dark:text-white tracking-tight mb-8">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="border border-border-muted dark:border-slate-800 rounded overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 bg-white dark:bg-slate-900 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="font-bold text-slate-800 dark:text-slate-200">What is the standard turnaround time for tool repairs?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+<div class="border border-border-muted dark:border-slate-800 rounded overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 bg-white dark:bg-slate-900 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="font-bold text-slate-800 dark:text-slate-200">How do I access technical documentation for specific models?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+<div class="border border-border-muted dark:border-slate-800 rounded overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 bg-white dark:bg-slate-900 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="font-bold text-slate-800 dark:text-slate-200">Are Fortress instruments compatible with third-party sterilization?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+<div class="border border-border-muted dark:border-slate-800 rounded overflow-hidden">
+<button class="w-full flex items-center justify-between p-5 bg-white dark:bg-slate-900 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+<span class="font-bold text-slate-800 dark:text-slate-200">What does the 10-year precision warranty cover?</span>
+<span class="material-symbols-outlined text-primary">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex-1">
+<div class="bg-primary text-white p-8 rounded-lg shadow-xl sticky top-32">
+<h3 class="text-xl font-extrabold mb-4 uppercase tracking-tighter">Immediate Assistance</h3>
+<p class="text-slate-300 text-sm mb-8 leading-relaxed">Can't find what you're looking for? Our technical support team is available 24/7 for urgent clinical matters.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-accent-teal">call</span>
+<div>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">Call Us</p>
+<p class="text-lg font-bold">1-800-FORTRESS</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-accent-teal">mail</span>
+<div>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">Email Support</p>
+<p class="text-lg font-bold">clinical.support@fortress.com</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-accent-teal">chat_bubble</span>
+<div>
+<p class="text-xs font-black uppercase tracking-widest text-slate-400">Live Chat</p>
+<p class="text-lg font-bold">Online Now</p>
+</div>
+</div>
+</div>
+<hr class="my-8 border-white/10"/>
+<button class="w-full bg-white text-primary py-3 rounded font-black text-xs tracking-widest uppercase hover:bg-slate-100 transition-all">
+                    START TICKETING PROCESS
+                </button>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-border-muted dark:border-slate-800 pt-16 pb-8 px-6 mt-20">
+<div class="max-w-[1200px] mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-2 md:col-span-1">
+<div class="flex items-center gap-2 text-primary dark:text-white mb-6">
+<span class="material-symbols-outlined">architecture</span>
+<h2 class="text-sm font-black tracking-tight uppercase">Fortress Surgical</h2>
+</div>
+<p class="text-xs text-slate-500 leading-relaxed mb-6">Engineering confidence in every incision since 1984. Leaders in robotic and manual surgical precision.</p>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">share</span>
+</div>
+<div class="w-8 h-8 rounded bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">public</span>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-6">Solutions</h4>
+<ul class="space-y-4 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Laparoscopy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Orthopedics</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Neuroscience</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Micro-Sutures</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-6">Company</h4>
+<ul class="space-y-4 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Global Offices</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Newsroom</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-6">Legal</h4>
+<ul class="space-y-4 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Regulatory</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Warranty</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Ethics</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">© 2024 Fortress Surgical Instrument Corp. ISO 13485 Certified.</p>
+<div class="flex gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Use</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

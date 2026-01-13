@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Process &amp; Compliance Wireframe | Fortress Surgical</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2c4559",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16191c",
+                        "accent-teal": "#00A896"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .nav-link {
+            @apply text-sm font-bold text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors uppercase tracking-wider;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#121517] dark:text-gray-100 transition-colors duration-200">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 bg-white dark:bg-background-dark px-6 md:px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-3 text-primary dark:text-white min-w-[200px]">
+<div class="size-6">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-black leading-tight tracking-[-0.015em] uppercase">Fortress Surgical</h2>
+</div>
+<nav class="hidden lg:flex items-center justify-center gap-8 flex-1">
+<a class="nav-link" href="#">Home</a>
+<a class="nav-link" href="#">About Us</a>
+<a class="nav-link" href="#">Products</a>
+<a class="nav-link" href="#">Services</a>
+<a class="nav-link" href="#">News</a>
+<a class="nav-link" href="#">Contact Us</a>
+</nav>
+<div class="flex items-center justify-end min-w-[200px]">
+<button class="bg-primary text-white text-xs font-bold px-6 py-2.5 rounded hover:bg-opacity-90 transition-all uppercase tracking-widest">
+                Request Quote
+            </button>
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center">
+<div class="w-full max-w-6xl px-6 py-8">
+<div class="flex flex-wrap gap-2 mb-6">
+<a class="text-gray-500 text-sm font-medium flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">home</span> Home
+                </a>
+<span class="text-gray-400 text-sm">/</span>
+<span class="text-primary dark:text-gray-200 text-sm font-bold">Process &amp; Compliance</span>
+</div>
+<div class="mb-12">
+<h1 class="text-primary dark:text-white text-5xl font-black leading-tight tracking-tighter mb-4">
+                    Procurement to Installation
+                </h1>
+<p class="text-gray-600 dark:text-gray-400 text-xl max-w-3xl leading-relaxed">
+                    A rigorous technical framework ensuring surgical equipment excellence from initial discovery through lifetime maintenance.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+<div class="lg:col-span-8">
+<div class="relative">
+<div class="absolute left-6 top-4 bottom-4 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+<div class="space-y-12">
+<div class="relative pl-16 group">
+<div class="absolute left-0 size-12 rounded-full bg-primary flex items-center justify-center text-white z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">clinical_notes</span>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-primary dark:text-white">Phase 1: Consultation &amp; Discovery</h3>
+<span class="text-xs font-bold bg-primary/10 text-primary px-2 py-1 rounded">EST. 1-2 WEEKS</span>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-4">Initial needs analysis with clinical leads to define surgical requirements and facility constraints.</p>
+<ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-accent-teal text-lg">check_circle</span> On-site assessment</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-accent-teal text-lg">check_circle</span> Budget alignment</li>
+</ul>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-0 size-12 rounded-full bg-primary flex items-center justify-center text-white z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-xl font-bold text-primary dark:text-white">Phase 2: Procurement &amp; Financing</h3>
+<span class="text-xs font-bold bg-primary/10 text-primary px-2 py-1 rounded">PROCESSING</span>
+</div>
+<p class="text-gray-600 dark:text-gray-400 mb-4">Structured order management including custom financing packages and legal review of terms.</p>
+<div class="bg-gray-50 dark:bg-gray-900 p-3 rounded text-sm font-mono text-gray-500">
+                                        VERIFIED: ISO-13485 PROCUREMENT PROTOCOL
+                                    </div>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-0 size-12 rounded-full bg-primary flex items-center justify-center text-white z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<h3 class="text-xl font-bold text-primary dark:text-white mb-2">Phase 3: Secure Global Logistics</h3>
+<p class="text-gray-600 dark:text-gray-400">White-glove delivery service with real-time climate monitoring and shock sensors for sensitive optics.</p>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-0 size-12 rounded-full bg-primary flex items-center justify-center text-white z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">engineering</span>
+</div>
+<div class="bg-white dark:bg-background-dark border border-gray-100 dark:border-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<h3 class="text-xl font-bold text-primary dark:text-white mb-2">Phase 4: Site Preparation &amp; Integration</h3>
+<p class="text-gray-600 dark:text-gray-400">Engineering review of OR infrastructure, power redundancy, and data integration requirements.</p>
+</div>
+</div>
+<div class="relative pl-16 group">
+<div class="absolute left-0 size-12 rounded-full bg-accent-teal flex items-center justify-center text-white z-10 shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="bg-white dark:bg-background-dark border-2 border-accent-teal/30 p-6 rounded-xl shadow-lg">
+<h3 class="text-xl font-bold text-primary dark:text-white mb-2">Phase 5: Professional Installation</h3>
+<p class="text-gray-600 dark:text-gray-400">On-site execution by certified Fortress engineers. Final calibration and biocompatibility testing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-primary text-white p-8 rounded-xl sticky top-24">
+<h4 class="text-2xl font-black mb-4">Ready to start?</h4>
+<p class="text-white/80 mb-6 font-medium">Our typical end-to-end implementation takes 4-8 weeks depending on facility readiness.</p>
+<button class="w-full bg-white text-primary font-bold py-4 rounded-lg hover:bg-gray-100 transition-colors mb-4">
+                            Request a Quote
+                        </button>
+<div class="space-y-4 pt-6 border-t border-white/10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-teal">verified_user</span>
+<span class="text-sm font-semibold">100% HIPAA Compliant</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-accent-teal">shield</span>
+<span class="text-sm font-semibold">5-Year Fortress Warranty</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-20 mb-10">
+<h2 class="text-3xl font-black text-primary dark:text-white tracking-tight">Regulatory Compliance &amp; Standards</h2>
+<p class="text-gray-500 mt-2">Maintaining international standards in every procedure.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<div class="border border-gray-200 dark:border-gray-800 p-8 bg-white dark:bg-background-dark rounded-xl">
+<div class="size-12 bg-gray-50 dark:bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">gavel</span>
+</div>
+<h4 class="text-lg font-bold mb-3 dark:text-white">FDA &amp; CE Marking</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Full compliance with Class II and Class III medical device regulations across all territories.</p>
+</div>
+<div class="border border-gray-200 dark:border-gray-800 p-8 bg-white dark:bg-background-dark rounded-xl">
+<div class="size-12 bg-gray-50 dark:bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+</div>
+<h4 class="text-lg font-bold mb-3 dark:text-white">ISO 13485:2016</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Our Quality Management System is audited annually to ensure operational excellence.</p>
+</div>
+<div class="border border-gray-200 dark:border-gray-800 p-8 bg-white dark:bg-background-dark rounded-xl">
+<div class="size-12 bg-gray-50 dark:bg-gray-900 rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">security</span>
+</div>
+<h4 class="text-lg font-bold mb-3 dark:text-white">GDPR &amp; Cybersecurity</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">End-to-end data encryption for all connected surgical systems and hospital networks.</p>
+</div>
+</div>
+<div class="bg-gray-100 dark:bg-gray-900 rounded-2xl p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 mb-20">
+<div class="flex-1">
+<h2 class="text-3xl font-black text-primary dark:text-white mb-6">Fortress Training Academy</h2>
+<p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        We don't just install; we empower. Our clinical specialists provide comprehensive on-site training for surgical teams and biomedical engineers.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<div class="bg-white dark:bg-background-dark px-4 py-3 rounded-lg flex items-center gap-3 border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">school</span>
+<span class="text-sm font-bold">On-site Workshop</span>
+</div>
+<div class="bg-white dark:bg-background-dark px-4 py-3 rounded-lg flex items-center gap-3 border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">video_library</span>
+<span class="text-sm font-bold">Digital Certification</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-white dark:bg-background-dark rounded-2xl overflow-hidden relative shadow-2xl">
+<img alt="Medical professional training" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqGiipdk8uGuFFdfFLCTHmckc-WnsQF9e2N2HkzAFxcjvXt5VulAQXAleKJZMUfXP7cFfAHBUrCzYpbQiCbbg65z1PUOhJbfzpjMFD7bfIs-u-t99-gjq4Bk2QEdcWOTrAFaQNiqIvISWCSCoajFGaazYVqd_Q58psvj_keLFY-Da73CjMSDX9Wo7BM3ObGg2OHvR-rKb6wE4KWwUpGBGYgxpWuoM8eiRgm_H5Hm5OlY_PEq8_U-8ikoI-eJLYwzzWxzcqzL3ZRr7A"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<div class="size-16 bg-white rounded-full flex items-center justify-center text-primary shadow-xl cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
+<div class="max-w-6xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 text-primary dark:text-white">
+<div class="size-6">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-black uppercase tracking-[-0.015em]">Fortress Surgical</h2>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-xs">
+                        Defining the gold standard in surgical equipment procurement, installation, and lifetime maintenance support.
+                    </p>
+<div class="flex gap-4 mt-2">
+<a class="text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">hub</span>
+</a>
+<a class="text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">rss_feed</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Home</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Process &amp; Compliance</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">News &amp; Updates</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-6">Solutions</h4>
+<ul class="space-y-4">
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Surgical Imaging</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Life Support Systems</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Sterilization Units</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Resource Center</a></li>
+<li><a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors" href="#">Technical Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white mb-6">Contact</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary dark:text-accent-teal mt-0.5">location_on</span>
+<p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                                1200 Innovation Dr, Suite 500<br/>Medical District, MN 55415
+                            </p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-accent-teal">call</span>
+<p class="text-sm text-gray-600 dark:text-gray-400">1-800-FORTRESS</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-accent-teal">mail</span>
+<p class="text-sm text-gray-600 dark:text-gray-400">contact@fortress-surgical.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-sm text-gray-500 dark:text-gray-400 font-medium">
+                    © 2024 Fortress Surgical. All rights reserved. Professional surgical equipment systems.
+                </div>
+<div class="flex gap-8">
+<a class="text-xs font-bold text-gray-600 dark:text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-xs font-bold text-gray-600 dark:text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-xs font-bold text-gray-600 dark:text-gray-400 hover:text-primary uppercase tracking-widest" href="#">Compliance Pack</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
