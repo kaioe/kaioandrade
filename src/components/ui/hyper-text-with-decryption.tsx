@@ -102,7 +102,7 @@ const Word = ({
         y: isHovered ? -4 : 0,
         opacity: isDimmed && !isHovered ? 0.3 : 1,
         filter: isDimmed && !isHovered ? "blur(2px)" : "blur(0px)",
-        color: isHovered ? "#FFFFFF" : isHighlightable ? "#2563eb" : "#1f2937", // White on hover, Blue if interactive, Gray default
+        color: isHovered ? "#FFFFFF" : isHighlightable ? "#2563eb" : "#50637e", // White on hover, Blue if interactive, Gray default
         zIndex: isHovered ? 20 : 1,
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
