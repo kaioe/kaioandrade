@@ -135,7 +135,7 @@ export default function DemoOne() {
 					transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
 					className="flex flex-col items-start gap-6 border-b-2 border-[#aaa] md:border-b-0 md:border-r-2 md:border-[#aaa] pb-8 md:pb-0 md:pr-12 w-full md:w-auto"
 				>
-					<h3 className="text-gray-400 font-mono text-sm tracking-widest uppercase">WORK IN PROGRESS (Max 2)</h3>
+					<h3 className="text-gray-400 font-mono text-sm tracking-widest uppercase">WORK IN PROGRESS</h3>
 					<div className="w-full max-w-sm">
 						<MorphingCardStack
 							defaultLayout="list"
@@ -161,6 +161,17 @@ export default function DemoOne() {
 										</div>
 									),
 									icon: <img src="/imgs/clientes/cinematic_posters_logo_clean.png" alt="Cinematic Posters Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "aafsgc",
+									title: "Accurate Accounting & Financial Services",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Institutional Website & SEO</div>
+											<a href="/projects/aafsgc/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/aafsgc/index.html</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/AAFS_Logo_ISOLATE-YELLOW-5-2048x1241.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
 								},
 							]}
 						/>
