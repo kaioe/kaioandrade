@@ -23,18 +23,22 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.53.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
+    "globals": "^17.0.0",
     "postcss": "^8.4.0",
     "sass": "^1.97.2",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.2.0",
+    "typescript-eslint": "^8.53.1",
     "vite": "^5.0.0"
   }
 }
