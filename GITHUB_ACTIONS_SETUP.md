@@ -72,26 +72,6 @@ The workflow will automatically run on:
 
 ---
 
-## Alternative: Use Vercel's Native Integration (Easier!)
-
-Instead of GitHub Actions, you can use Vercel's built-in Git integration:
-
-1. **Connect GitHub to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click **"Add New..."** → **"Project"**
-   - Import from GitHub
-   - Vercel handles everything automatically!
-
-2. **Benefits:**
-   - ✅ No secrets to manage
-   - ✅ Automatic deployments
-   - ✅ Preview deployments for PRs
-   - ✅ Built-in CI/CD
-
-**This is the recommended approach!** GitHub Actions is useful if you need custom build steps or want to deploy to multiple platforms.
-
----
-
 ## Workflow Files Explained
 
 ### `deploy-simple.yml`
@@ -149,8 +129,6 @@ Instead of GitHub Actions, you can use Vercel's built-in Git integration:
 ---
 
 ## Recommended Approach
-
-**For most users:** Use Vercel's native Git integration (no GitHub Actions needed)
 
 **Use GitHub Actions if:**
 - You need custom build steps

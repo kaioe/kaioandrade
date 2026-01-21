@@ -172,7 +172,7 @@ export function MorphingCardStack({
                     layout === "stack" && isTopCard && "cursor-grab active:cursor-grabbing",
                     layout === "grid" && "w-full aspect-square",
                     layout === "list" && "w-full",
-                    isExpanded && "ring-2 ring-primary",
+                    isExpanded && "ring-primary",
                   )}
                   style={{
                     backgroundColor: card.color || undefined,
