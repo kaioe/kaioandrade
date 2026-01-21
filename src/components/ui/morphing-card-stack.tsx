@@ -166,7 +166,7 @@ export function MorphingCardStack({
                     onCardClick?.(card)
                   }}
                   className={cn(
-                    "cursor-pointer rounded-xl border border-border bg-card p-4",
+                    "cursor-pointer rounded-xl border border-border bg-card p-4 relative overflow-hidden",
                     "hover:border-primary/50 transition-colors",
                     layout === "stack" && "absolute w-56 h-48",
                     layout === "stack" && isTopCard && "cursor-grab active:cursor-grabbing",
@@ -178,6 +178,11 @@ export function MorphingCardStack({
                     backgroundColor: card.color || undefined,
                   }}
                 >
+                  {card.id === "cinematic-posters" && (
+                    <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded transform rotate-12 shadow-lg z-10">
+                      Paused
+                    </div>
+                  )}
                   <div className="flex items-start gap-3">
                     {card.icon && (
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-foreground">
