@@ -35,6 +35,8 @@ jobs:
           server: ${{ secrets.CLOUDWAYS_FTP_HOST }}
           username: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
           password: ${{ secrets.CLOUDWAYS_FTP_PASSWORD }}
+          protocol: sftp
+          port: 22
           local-dir: ./dist/
           server-dir: ./public_html/
           exclude: |
