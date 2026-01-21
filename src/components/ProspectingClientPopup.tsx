@@ -62,7 +62,6 @@ const FloatingInput = ({
 }
 
 export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPopupProps) {
-  const constraintsRef = useRef(null)
 
   return (
     <AnimatePresence>

@@ -1,8 +1,6 @@
 
 import HyperTextParagraph from "@/components/ui/hyper-text-with-decryption";
 import { motion } from "framer-motion";
-import { Code2, Palette, Globe, Cpu } from "lucide-react";
-import { SimpleTooltip } from "@/components/ui/simple-tooltip";
 import { MorphingCardStack } from "@/components/ui/morphing-card-stack";
 import { EarthIcon } from "@/components/ui/icons/earth";
 import { CpuIcon } from "@/components/ui/icons/cpu";
