@@ -29,20 +29,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudways via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to Cloudways via SCP
+        uses: appleboy/scp-action@v0.1.4
         with:
-          server: ${{ secrets.CLOUDWAYS_FTP_HOST }}
+          host: ${{ secrets.CLOUDWAYS_FTP_HOST }}
           username: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
           password: ${{ secrets.CLOUDWAYS_FTP_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: ./dist/
-          server-dir: ./public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.DS_Store
-            **/README.md
-            **/.gitignore
+          source: "dist/*"
+          target: "public_html/"
+          strip_components: 1
