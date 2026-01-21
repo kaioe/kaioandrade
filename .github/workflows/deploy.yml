@@ -1,17 +1,12 @@
-name: Build and Test
+name: Build and Deploy to Cloudways
 
 on:
   push:
     branches:
       - main
-      - master
-  pull_request:
-    branches:
-      - main
-      - master
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,9 +29,18 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+      - name: Deploy to Cloudways via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          name: build-files
-          path: dist
-          retention-days: 1
+          server: ${{ secrets.CLOUDWAYS_FTP_HOST }}
+          username: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
+          password: ${{ secrets.CLOUDWAYS_FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
+            **/README.md
+            **/.gitignore

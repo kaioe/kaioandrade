@@ -2,9 +2,9 @@
 
 ## Overview
 
-I've created two GitHub Actions workflow files:
+I've created GitHub Actions workflow files:
 
-1. **`.github/workflows/deploy.yml`** - Full Vercel deployment (requires Vercel secrets)
+1. **`.github/workflows/deploy.yml`** - Full Cloudways deployment via SFTP (requires FTP credentials)
 2. **`.github/workflows/deploy-simple.yml`** - Build and test only (no secrets needed)
 
 ---
@@ -12,7 +12,7 @@ I've created two GitHub Actions workflow files:
 ## Option 1: Simple Build & Test (Recommended to Start)
 
 The `deploy-simple.yml` workflow will:
-- ✅ Run on every push to `main`/`master`
+- ✅ Run on every push to `main`
 - ✅ Install dependencies
 - ✅ Run linter
 - ✅ Build the project
@@ -22,48 +22,29 @@ The `deploy-simple.yml` workflow will:
 
 ---
 
-## Option 2: Full Vercel Deployment
+## Option 2: Full Cloudways Deployment
 
 The `deploy.yml` workflow will:
 - ✅ Do everything from Option 1
-- ✅ Deploy to Vercel automatically
-- ⚠️ Requires Vercel secrets setup
+- ✅ Deploy to Cloudways automatically via SFTP
+- ⚠️ Requires Cloudways FTP credentials setup
 
 ### Setup Steps:
 
-#### 1. Get Vercel Credentials
+#### 1. Get Cloudways FTP Credentials
 
-**Method A: Using Vercel CLI (Easiest)**
-```bash
-# Install Vercel CLI
-npm i -g vercel
+1. **Login to Cloudways Console**
+   - Go to [platform.cloudways.com](https://platform.cloudways.com)
+   - Select your application
 
-# Login to Vercel
-vercel login
+2. **Get FTP/SFTP Details**
+   - Go to **Application Management** → **Deployment via FTP/SFTP**
+   - Note down:
+     - **FTP Host** (e.g., `ftp.example.com`)
+     - **FTP Username**
+     - **FTP Password**
 
-# Link your project (run in project root)
-vercel link
-
-# This will show:
-# - VERCEL_ORG_ID
-# - VERCEL_PROJECT_ID
-```
-
-**Method B: From Vercel Dashboard**
-1. Go to your project on [vercel.com](https://vercel.com)
-2. Go to **Settings** → **General**
-3. Find:
-   - **Team ID** (this is your ORG_ID)
-   - **Project ID**
-
-#### 2. Get Vercel Token
-
-1. Go to [vercel.com/account/tokens](https://vercel.com/account/tokens)
-2. Click **"Create Token"**
-3. Name it (e.g., "GitHub Actions")
-4. Copy the token (you won't see it again!)
-
-#### 3. Add Secrets to GitHub
+#### 2. Add Secrets to GitHub
 
 1. Go to your GitHub repository
 2. Click **Settings** → **Secrets and variables** → **Actions**
@@ -72,15 +53,22 @@ vercel link
 
    | Secret Name | Value |
    |------------|-------|
-   | `VERCEL_TOKEN` | Your Vercel token from step 2 |
-   | `VERCEL_ORG_ID` | Your Team/Org ID |
-   | `VERCEL_PROJECT_ID` | Your Project ID |
+   | `CLOUDWAYS_FTP_HOST` | Your FTP host (without ftp://) |
+   | `CLOUDWAYS_FTP_USERNAME` | Your FTP username |
+   | `CLOUDWAYS_FTP_PASSWORD` | Your FTP password |
+
+#### 3. Verify Deployment Path
+
+The workflow deploys to `./public_html/` directory. If your Cloudways app uses a different webroot:
+- Update the `server-dir` in `.github/workflows/deploy.yml`
+- Common alternatives: `./public/`, `./www/`, or root `./`
 
 #### 4. Enable the Workflow
 
 The workflow will automatically run on:
-- Push to `main`/`master` branch
-- Pull requests to `main`/`master` branch
+- Push to `main` branch
+
+**Note:** Removed pull request trigger to avoid unnecessary deployments during code review.
 
 ---
 
@@ -113,9 +101,9 @@ Instead of GitHub Actions, you can use Vercel's built-in Git integration:
 - **Use case:** CI/CD validation
 
 ### `deploy.yml`
-- **Purpose:** Build, test, and deploy to Vercel
-- **When:** Every push/PR
-- **Secrets:** Requires Vercel credentials
+- **Purpose:** Build, test, and deploy to Cloudways
+- **When:** Every push to main
+- **Secrets:** Requires Cloudways FTP credentials
 - **Use case:** Full automated deployment
 
 ---
@@ -152,10 +140,11 @@ Instead of GitHub Actions, you can use Vercel's built-in Git integration:
 - Test locally: `npm run build`
 - Fix any TypeScript or build errors
 
-### Vercel Deployment Fails
-- Verify all three secrets are set correctly
-- Check that VERCEL_TOKEN has proper permissions
-- Ensure VERCEL_ORG_ID and VERCEL_PROJECT_ID are correct
+### Cloudways Deployment Fails
+- Verify all three FTP secrets are set correctly
+- Check that FTP credentials have write permissions to public_html/
+- Ensure the FTP host is correct (without ftp:// prefix)
+- Confirm the server-dir path matches your Cloudways webroot
 
 ---
 
