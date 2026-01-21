@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { toast } from "sonner"
 import { XIcon } from "@/components/ui/icons/x"
 import { GripIcon } from "@/components/ui/icons/grip"
 import { cn } from "@/lib/utils"
@@ -62,6 +63,68 @@ const FloatingInput = ({
 }
 
 export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPopupProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Get form values
+      const name = (document.getElementById("name") as HTMLInputElement)?.value;
+      const mobile = (document.getElementById("mobile") as HTMLInputElement)?.value;
+      const email = (document.getElementById("email") as HTMLInputElement)?.value;
+      const message = (document.getElementById("message") as HTMLTextAreaElement)?.value;
+
+      // Validate required fields
+      if (!name || !email || !message) {
+        throw new Error("Please fill in all required fields");
+      }
+
+      // Validate email format
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        throw new Error("Please enter a valid email address");
+      }
+
+      // Real API call to send email using Gmail SMTP
+      const response = await fetch("http://localhost:3001/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          mobile,
+          email,
+          message,
+        }),
+      });
+
+      const responseData = await response.json();
+
+      if (!response.ok || !responseData.success) {
+        throw new Error(responseData.error || "Failed to send message. Please try again later.");
+      }
+
+      // Show success toast
+      toast.success("Message sent successfully!", {
+        description: "Thank you for your message. I'll get back to you soon!",
+        duration: 5000,
+      });
+
+      // Close the popup after successful submission
+      onClose();
+
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast.error("Error sending message", {
+        description: error instanceof Error ? error.message : "An unknown error occurred",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -102,7 +165,7 @@ export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPop
             </div>
 
             {/* Form Content */}
-            <form className="p-8 space-y-4" onSubmit={(e) => { e.preventDefault(); onClose(); }}>
+            <form className="p-8 space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-4">
                 <FloatingInput id="name" label="Full Name" required />
                 <div className="grid grid-cols-2 gap-4">
@@ -116,9 +179,17 @@ export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPop
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-200 flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <span>SEND MESSAGE</span>
+                {isSubmitting ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span>SENDING...</span>
+                  </>
+                ) : (
+                  <span>SEND MESSAGE</span>
+                )}
               </motion.button>
             </form>
           </motion.div>
