@@ -169,7 +169,7 @@ export default function DemoOne() {
 											<a href="/projects/aafsgc/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/aafsgc/index.html</a>
 										</div>
 									),
-									icon: <img src="/imgs/clientes/AAFS_Logo_ISOLATE-YELLOW-5-2048x1241.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
+									icon: <img src="/imgs/clientes/aafsgc-logo.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
 								},
 							]}
 						/>
