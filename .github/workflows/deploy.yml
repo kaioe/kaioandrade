@@ -1,4 +1,4 @@
-name: Build and Deploy to Cloudways
+name: Deploy to Cloudways
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,13 +29,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudways via SCP
-        uses: appleboy/scp-action@v0.1.4
+      - name: Deploy to Cloudways via Rsync
+        uses: Burnett01/rsync-deployments@7.0.1
         with:
-          host: ${{ secrets.CLOUDWAYS_FTP_HOST }}
-          username: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
-          password: ${{ secrets.CLOUDWAYS_FTP_PASSWORD }}
-          port: 22
-          source: "dist/*"
-          target: "public_html/"
-          strip_components: 1
+          switches: -vrtz --delete --no-perms --no-owner --no-group --omit-dir-times
+          path: dist/
+          remote_path: ${{ secrets.CLOUDWAYS_APP_PATH }}
+          remote_host: ${{ secrets.CLOUDWAYS_FTP_HOST }}
+          remote_user: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
+          remote_key: ${{ secrets.CLOUDWAYS_SSH_KEY }}
+          remote_port: 22
