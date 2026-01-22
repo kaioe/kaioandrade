@@ -29,6 +29,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Create PHP Config
+        run: |
+          # Create the config.php file for the PHP backend
+          # We write directly to dist/api because Vite copies public/api -> dist/api
+          # and we want to inject secrets right before deployment
+          echo "<?php define('EMAIL_TO', '${{ secrets.GMAIL_USER }}');" > dist/api/config.php
+
       - name: Deploy to Cloudways via Rsync
         uses: Burnett01/rsync-deployments@7.0.1
         with:

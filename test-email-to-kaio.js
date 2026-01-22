@@ -1,19 +1,20 @@
 import fetch from 'node-fetch';
 
-// Test the contact form API endpoint
-async function testContactForm() {
-  console.log('🧪 Testing Contact Form...');
+// Test sending email to kaioed@gmail.com
+async function testEmailToKaio() {
+  console.log('🧪 Testing Email to kaioed@gmail.com...');
 
   const testData = {
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    name: 'Test User',
+    email: 'test@example.com',
     mobile: '+1234567890',
-    message: 'This is a test message from the contact form.'
+    message: 'This is a test message sent at ' + new Date().toISOString()
   };
 
   try {
     console.log('📧 Sending test request to:', 'http://localhost:3001/api/send-email');
     console.log('📝 Test data:', testData);
+    console.log('📬 Recipient will be:', 'kaioed@gmail.com');
 
     const response = await fetch('http://localhost:3001/api/send-email', {
       method: 'POST',
@@ -31,6 +32,7 @@ async function testContactForm() {
       if (data.messageId) {
         console.log('🆔 Message ID:', data.messageId);
       }
+      console.log('📧 Check kaioed@gmail.com for the test email');
     } else {
       console.log('❌ Test FAILED!');
       console.log('💥 Error:', data.error || 'Unknown error');
@@ -42,10 +44,8 @@ async function testContactForm() {
   } catch (error) {
     console.log('❌ Test FAILED with exception!');
     console.log('💥 Error:', error.message);
-    console.log('🔍 This might be because the email server is not running.');
-    console.log('🚀 Try running: node server.js');
   }
 }
 
 // Run the test
-testContactForm();
+testEmailToKaio().catch(console.error);

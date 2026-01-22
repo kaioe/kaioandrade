@@ -86,8 +86,21 @@ export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPop
         throw new Error("Please enter a valid email address");
       }
 
-      // Real API call to send email using Gmail SMTP
-      const response = await fetch("http://localhost:3001/api/send-email", {
+      // Determine API endpoint
+      // Development: Local Node.js server
+      // Production: PHP script on Cloudways
+      let apiEndpoint = "http://localhost:3000/api/send-email";
+
+      if (import.meta.env.PROD) {
+          apiEndpoint = "/api/send-email.php";
+      }
+
+      // Allow overriding via env var if needed
+      if (import.meta.env.VITE_EMAIL_API_ENDPOINT) {
+          apiEndpoint = import.meta.env.VITE_EMAIL_API_ENDPOINT;
+      }
+
+      const response = await fetch(apiEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
