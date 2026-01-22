@@ -72,10 +72,16 @@ $headers .= "From: Contact Form <no-reply@kaioandrade.com>" . "\r\n";
 $headers .= "Reply-To: $email" . "\r\n";
 
 // Send Email
+// Send Email
+// Log the attempt
+error_log("Attempting to send email to $to from $email");
+
 if (mail($to, $subject, $email_content, $headers)) {
     echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
 } else {
+    $lastError = error_get_last();
+    error_log("Mail failure: " . print_r($lastError, true));
     http_response_code(500);
-    echo json_encode(['success' => false, 'error' => 'Failed to send email via server transport']);
+    echo json_encode(['success' => false, 'error' => 'Failed to send email via server transport', 'details' => $lastError]);
 }
 ?>

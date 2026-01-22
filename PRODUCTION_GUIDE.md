@@ -1,43 +1,43 @@
-# Production Deployment Guide
+# Production Deployment Guide (Cloudways)
 
-This project consists of two parts:
-1.  **Frontend**: A Vite/React application.
-2.  **Backend**: A Node.js Express server (for email).
+This project is configured for a **unified deployment** on Cloudways.
+- **Frontend**: React (Vite) Single Page Application.
+- **Backend**: A lightweight PHP script (`api/send-email.php`) handling form submissions.
 
-To deploy this to production, you cannot simply use `npm run dev`. You need to deploy them separately (recommended) or use a platform that supports both.
+Because both run on the same server, you avoid Cross-Origin (CORS) issues and complex multi-service orchestration.
 
-## Part 1: Deploying the Backend (Email Server)
+## Architecture
 
-The backend needs to run continuously. Services like **Render**, **Railway**, or **Heroku** are perfect for this.
+| Environment | Frontend | Backend | API URL |
+| :--- | :--- | :--- | :--- |
+| **Local (Dev)** | `localhost:5173` (Vite) | `localhost:3000` (Node.js) | `http://localhost:3000/api/send-email` |
+| **Production** | Cloudways (Apache/Nginx) | Cloudways (PHP) | `/api/send-email.php` |
 
-### Steps for Render (Free Tier available)
-1.  Push your code to GitHub.
-2.  Create a new **Web Service** on Render connected to your repo.
-3.  **Build Command**: `npm install`
-4.  **Start Command**: `node server.js`
-5.  **Environment Variables**:
-    You MUST add the following variables in the Render dashboard:
-    *   `EMAIL_SERVICE`: `smtp.gmail.com`
-    *   `GMAIL_USER`: `dev@kaioandrade.com` (or your email)
-    *   `CLIENT_ID`: (From your .env)
-    *   `CLIENT_SECRET`: (From your .env)
-    *   `REFRESH_TOKEN`: (From your .env - this is CRITICAL. Use the one you generated locally)
-    *   `GMAIL_PASSWORD`: `OAuth2_Enabled`
+*Note: The frontend code automatically detects if it's in production (`import.meta.env.PROD`) and switches the API endpoint accordingly.*
 
-**Important**: The `REFRESH_TOKEN` must be valid. Since we generated it locally with the `mail.google.com` scope, it should work indefinitely unless revoked.
+## Deployment Pipeline (GitHub Actions)
 
-## Part 2: Deploying the Frontend
+We use a GitHub Action (`.github/workflows/deploy.yml`) to automate deployment to Cloudways.
 
-The frontend is a static site. Services like **Vercel** or **Netlify** are best.
+### How it works:
+1.  **Push to `main` branch**: Triggers the workflow.
+2.  **Build**: Runs `npm run build` to generate the `dist/` folder.
+3.  **Config Injection**: Creates a `dist/api/config.php` file on the fly, injecting your `GMAIL_USER` secret.
+4.  **Rsync**: Uploads the entire `dist/` folder to your Cloudways application folder (`public_html`).
 
-### Steps for Vercel
-1.  Import your GitHub repo into Vercel.
-2.  **Framework Preset**: Vite
-3.  **Build Command**: `npm run build`
-4.  **Output Directory**: `dist`
-5.  **Environment Variables**:
-    *   `VITE_EMAIL_API_ENDPOINT`: The URL of your deployed Backend (e.g., `https://kaio-email-server.onrender.com/api/send-email`)
+## Configuration Requirements
 
-## Summary
-1.  Deploy Backend -> Get URL.
-2.  Deploy Frontend -> Set `VITE_EMAIL_API_ENDPOINT` to that Backend URL.
+For the deployment to work, ensure these **Secrets** are set in your GitHub Repository settings:
+
+| Secret Name | Description |
+| :--- | :--- |
+| `CLOUDWAYS_FTP_HOST` | Your Cloudways Server IP Address. |
+| `CLOUDWAYS_FTP_USERNAME` | Your Master (or App) Username. |
+| `CLOUDWAYS_APP_PATH` | Full path to `public_html`, e.g., `/home/master/applications/APP_NAME/public_html/`. |
+| `CLOUDWAYS_SSH_KEY` | Your Private SSH Key (ensure Public Key is added to Cloudways). |
+| `GMAIL_USER` | The email address to receive contact form submissions (e.g., `dev@kaioandrade.com`). |
+
+## Monitoring & Logs
+
+- **Frontend Updates**: Check the "Actions" tab in GitHub to see deployment status.
+- **Email Delivery**: Since we use PHP's `mail()` function, ensure your Cloudways server has the **Elastic Email** add-on enabled (or another SMTP service configured) to guarantee email delivery.
