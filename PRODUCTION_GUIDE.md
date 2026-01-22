@@ -1,43 +1,33 @@
-# Production Deployment Guide (Cloudways)
+# Production Deployment Guide (SendGrid + Cloudways)
 
-This project is configured for a **unified deployment** on Cloudways.
-- **Frontend**: React (Vite) Single Page Application.
-- **Backend**: A lightweight PHP script (`api/send-email.php`) handling form submissions.
+This project has been migrated to use **SendGrid** for reliable email delivery.
 
-Because both run on the same server, you avoid Cross-Origin (CORS) issues and complex multi-service orchestration.
+## Local Development
+1.  Add your `SENDGRID_API_KEY` to the `.env` file.
+2.  Ensure `CONTACT_EMAIL` in `.env` matches a **Verified Sender Identity** in your SendGrid dashboard.
+3.  Run `npm run start:dev` to start the frontend and local email server.
 
-## Architecture
+## Production (Cloudways)
+The production environment uses the Cloudways **SMTP Add-on** configured with your SendGrid credentials.
 
-| Environment | Frontend | Backend | API URL |
-| :--- | :--- | :--- | :--- |
-| **Local (Dev)** | `localhost:5173` (Vite) | `localhost:3000` (Node.js) | `http://localhost:3000/api/send-email` |
-| **Production** | Cloudways (Apache/Nginx) | Cloudways (PHP) | `/api/send-email.php` |
+### 1. Cloudways Setup
+1.  Log in to Cloudways Console.
+2.  Go to **Server Management** -> **SMTP**.
+3.  Select **External SMTP**.
+4.  Choose **SendGrid** from the dropdown.
+5.  Enter your SendGrid API Key (use `apikey` as username).
+6.  **Important**: Send a test email from the Cloudways console to verify the server is authenticated.
 
-*Note: The frontend code automatically detects if it's in production (`import.meta.env.PROD`) and switches the API endpoint accordingly.*
+### 2. GitHub Actions Deployment
+The deployment workflow (`.github/workflows/deploy.yml`) is already configured to:
+1.  Build the React app.
+2.  Inject the `config.php` (using the `GMAIL_USER` secret for the target email).
+3.  Deploy both the site and the PHP API to your Cloudways server.
 
-## Deployment Pipeline (GitHub Actions)
+### 3. Verification
+- **Local**: Use the "Contact Me" form on `localhost:5173`. Check your terminal for `✅ Connected to SendGrid SMTP`.
+- **Production**: Use the form on `kaioandrade.com`. The PHP script will use the Cloudways SMTP relay to send the email via SendGrid.
 
-We use a GitHub Action (`.github/workflows/deploy.yml`) to automate deployment to Cloudways.
-
-### How it works:
-1.  **Push to `main` branch**: Triggers the workflow.
-2.  **Build**: Runs `npm run build` to generate the `dist/` folder.
-3.  **Config Injection**: Creates a `dist/api/config.php` file on the fly, injecting your `GMAIL_USER` secret.
-4.  **Rsync**: Uploads the entire `dist/` folder to your Cloudways application folder (`public_html`).
-
-## Configuration Requirements
-
-For the deployment to work, ensure these **Secrets** are set in your GitHub Repository settings:
-
-| Secret Name | Description |
-| :--- | :--- |
-| `CLOUDWAYS_FTP_HOST` | Your Cloudways Server IP Address. |
-| `CLOUDWAYS_FTP_USERNAME` | Your Master (or App) Username. |
-| `CLOUDWAYS_APP_PATH` | Full path to `public_html`, e.g., `/home/master/applications/APP_NAME/public_html/`. |
-| `CLOUDWAYS_SSH_KEY` | Your Private SSH Key (ensure Public Key is added to Cloudways). |
-| `GMAIL_USER` | The email address to receive contact form submissions (e.g., `dev@kaioandrade.com`). |
-
-## Monitoring & Logs
-
-- **Frontend Updates**: Check the "Actions" tab in GitHub to see deployment status.
-- **Email Delivery**: Since we use PHP's `mail()` function, ensure your Cloudways server has the **Elastic Email** add-on enabled (or another SMTP service configured) to guarantee email delivery.
+## Troubleshooting
+- **No Email Received**: Check your **SendGrid Activity Feed**. If it shows "Dropped", it's likely because your "From" address (in `send-email.php` or `server.js`) isn't verified in SendGrid.
+- **500 Error**: Check the PHP error logs in Cloudways. Ensure the SMTP add-on is active.
