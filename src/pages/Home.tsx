@@ -54,7 +54,7 @@ export default function DemoOne() {
 
 				{/* Main Content */}
 				<div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[2rem] p-8 md:p-16">
-					<HyperTextParagraph text={bio} highlightWords={triggers} className="text-2xl md:text-4xl text-gray-800 font-normal leading-[1.6]" />
+					<HyperTextParagraph text={bio} highlightWords={triggers} className="text-2xl md:text-4xl text-gray-600 font-normal leading-[1.6]" />
 				</div>
 
 				{/* Footer */}

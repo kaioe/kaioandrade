@@ -125,7 +125,10 @@ const Word = ({
         color: isHovered ? "#FFFFFF" : isHighlightable ? "#2563eb" : "currentColor", // Respect inherited color (like gray-800) but blue if interactive
         zIndex: isHovered ? 20 : 1,
       }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      transition={{
+        type: "spring", stiffness: 300, damping: 20,
+        filter: { type: "tween", duration: 0.2 }
+      }}
     >
       {/* Background Pill (Only Visible on Hover) */}
       <AnimatePresence>
