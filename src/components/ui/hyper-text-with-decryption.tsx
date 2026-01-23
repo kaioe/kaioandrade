@@ -11,13 +11,22 @@ const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+"; // Uppercase + Symbols l
 interface HyperTextProps {
   text: string;
   className?: string;
-  highlightWords?: string[];
+  highlightWords?: (string | WordConfig)[];
+}
+
+interface WordConfig {
+  word: string;
+  initialScrambled?: boolean;
+  className?: string;
+  interactive?: boolean;
 }
 
 interface WordProps {
   children: string;
   isDimmed: boolean; // True when another word is hovered
   isHighlightable: boolean;
+  initialScrambled?: boolean;
+  className?: string;
   onHoverStart: () => void;
   onHoverEnd: () => void;
 }
@@ -26,10 +35,20 @@ const Word = ({
   children,
   isDimmed,
   isHighlightable,
+  initialScrambled,
+  className,
   onHoverStart,
   onHoverEnd,
 }: WordProps) => {
-  const [displayText, setDisplayText] = useState(children);
+  const [displayText, setDisplayText] = useState(() => {
+    if (initialScrambled) {
+      return children
+        .split("")
+        .map(() => CHARS[Math.floor(Math.random() * CHARS.length)])
+        .join("");
+    }
+    return children;
+  });
   const [isHovered, setIsHovered] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -87,10 +106,11 @@ const Word = ({
 
   return (
     <motion.span
-      className={`
-        relative inline-block font-mono font-medium whitespace-nowrap
-        ${isHighlightable ? "cursor-pointer" : "cursor-default"}
-      `}
+      className={cn(
+        "relative inline-block font-mono font-medium whitespace-nowrap",
+        isHighlightable ? "cursor-pointer" : "cursor-default",
+        className
+      )}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       animate={{
@@ -102,7 +122,7 @@ const Word = ({
         y: isHovered ? -4 : 0,
         opacity: isDimmed && !isHovered ? 0.3 : 1,
         filter: isDimmed && !isHovered ? "blur(2px)" : "blur(0px)",
-        color: isHovered ? "#FFFFFF" : isHighlightable ? "#2563eb" : "#50637F", // White on hover, Blue if interactive, Gray default
+        color: isHovered ? "#FFFFFF" : isHighlightable ? "#2563eb" : "currentColor", // Respect inherited color (like gray-800) but blue if interactive
         zIndex: isHovered ? 20 : 1,
       }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -166,15 +186,24 @@ export default function HyperTextParagraph({
   return (
     <div className={cn("leading-relaxed tracking-wide", className)}>
       {words.map((word, i) => {
-        const isHighlightable = highlightWords.some(
-          (hw) => clean(hw) === clean(word)
-        );
+        const config = highlightWords.find((hw) => {
+          const targetWord = typeof hw === "string" ? hw : hw.word;
+          // Exact match first, then fallback to cleaned match
+          if (targetWord === word) return true;
+          return clean(targetWord) === clean(word) && clean(targetWord) !== "";
+        });
+
+        const isHighlightable = typeof config === "object" ? config.interactive !== false : !!config;
+        const initialScrambled = typeof config === "object" ? config.initialScrambled : false;
+        const wordClassName = typeof config === "object" ? config.className : undefined;
 
         return (
           <React.Fragment key={i}>
             <Word
               isDimmed={isParagraphHovered}
               isHighlightable={isHighlightable}
+              initialScrambled={initialScrambled}
+              className={wordClassName}
               onHoverStart={() => setIsParagraphHovered(true)}
               onHoverEnd={() => setIsParagraphHovered(false)}
             >

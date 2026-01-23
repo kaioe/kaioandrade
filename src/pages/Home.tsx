@@ -13,7 +13,15 @@ export default function DemoOne() {
 	const bio = "“The best revenge is not to be like your enemy.” – Marcus Aurelius";
 
 	// Key words to trigger the effect
-	const triggers = ["best", "not", "like", "enemy"];
+	const triggers = [
+		{ word: "best", initialScrambled: true },
+		{ word: "not", initialScrambled: true },
+		{ word: "like", initialScrambled: true },
+		{ word: "enemy", initialScrambled: true },
+		{ word: "–", className: "text-xs md:text-sm opacity-60", interactive: false },
+		{ word: "Marcus", className: "text-xs md:text-sm opacity-60", interactive: false },
+		{ word: "Aurelius", className: "text-xs md:text-sm opacity-60", interactive: false },
+	];
 
 	return (
 		<div className="min-h-screen bg-zinc-50 dark:bg-slate-900 flex flex-col items-center justify-center p-6 md:p-12 relative overflow-hidden">
