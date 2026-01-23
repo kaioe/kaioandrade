@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useDragControls } from "framer-motion"
 import { toast } from "sonner"
 import { XIcon } from "@/components/ui/icons/x"
 import { GripIcon } from "@/components/ui/icons/grip"
@@ -64,6 +64,7 @@ const FloatingInput = ({
 
 export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPopupProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const dragControls = useDragControls()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -155,6 +156,8 @@ export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPop
           {/* Draggable Popup */}
           <motion.div
             drag
+            dragControls={dragControls}
+            dragListener={false}
             dragMomentum={false}
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -164,7 +167,10 @@ export function ProspectingClientPopup({ isOpen, onClose }: ProspectingClientPop
             {/* Header / Drag Handle */}
             <div className="flex items-center justify-between p-6 border-b border-gray-100 dark:border-slate-800">
               <div className="flex items-center gap-3">
-                <div className="cursor-grab active:cursor-grabbing p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+                <div
+                  onPointerDown={(e) => dragControls.start(e)}
+                  className="cursor-grab active:cursor-grabbing p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg transition-colors group"
+                >
                   <GripIcon size={18} className="text-gray-400 group-hover:text-blue-500" />
                 </div>
                 <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-gray-500">Contact Request</h3>
