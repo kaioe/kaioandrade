@@ -29,7 +29,7 @@ if (empty($name) || empty($email) || empty($message)) {
 }
 
 $to = defined('EMAIL_TO') ? EMAIL_TO : 'dev@kaioandrade.com';
-$subject = "New Contact Request: $name";
+$subject = "Contact Request: $name, kaioandrade.com";
 
 $html_content = "
 <html>

@@ -83,7 +83,7 @@ app.post('/api/send-email', async (req, res) => {
       from: `"Contact Form" <${fromEmail}>`,
       to: toEmail,
       replyTo: email,
-      subject: `New Contact Request from ${name}`,
+      subject: `Contact Request from ${name}, kaioandrade.com`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333;">New Contact Request</h2>

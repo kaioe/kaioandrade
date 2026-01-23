@@ -64,7 +64,7 @@ export async function handler(context) {
     const mailOptions = {
       from: `"Contact Form" <${emailConfig.auth.user}>`,
       to: emailConfig.auth.user, // Send to yourself
-      subject: `New Contact Request from ${name}`,
+      subject: `Contact Request from ${name}, kaioandrade.com`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333;">New Contact Request</h2>
