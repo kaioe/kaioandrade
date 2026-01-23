@@ -46,3 +46,13 @@ jobs:
           remote_user: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
           remote_key: ${{ secrets.CLOUDWAYS_SSH_KEY }}
           remote_port: 22
+
+      - name: Post-deployment copy .env
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.CLOUDWAYS_FTP_HOST }}
+          username: ${{ secrets.CLOUDWAYS_FTP_USERNAME }}
+          key: ${{ secrets.CLOUDWAYS_SSH_KEY }}
+          port: 22
+          script: |
+            cp ${{ secrets.CLOUDWAYS_APP_PATH }}/../private_html/.env ${{ secrets.CLOUDWAYS_APP_PATH }}/.env
