@@ -118,6 +118,17 @@ export default function DemoOne() {
 								icon: <img src="/imgs/clientes/martial-arts-logbook-logo.png" alt="Martial Arts Logbook Logo" className="w-full h-full object-contain" />,
 							},
 							{
+								id: "aafsgc",
+								title: "Accurate Accounting & Financial Services",
+								description: (
+									<div className="flex flex-col gap-1 text-xs">
+										<div><span className="font-semibold">Job:</span> Institutional Website & SEO</div>
+										<a href="https://aafsgc.com.au/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://aafsgc.com.au/</a>
+									</div>
+								),
+								icon: <img src="/imgs/clientes/aafsgc-logo.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
+							},
+							{
 								id: "web-dev",
 								title: "Web Development",
 								description: "Full-stack development using modern technologies like React, Node.js, and TypeScript.",
@@ -167,17 +178,6 @@ export default function DemoOne() {
 										</div>
 									),
 									icon: <img src="/imgs/clientes/cinematic_posters_logo_clean.png" alt="Cinematic Posters Logo" className="w-full h-full object-contain" />,
-								},
-								{
-									id: "aafsgc",
-									title: "Accurate Accounting & Financial Services",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Institutional Website & SEO</div>
-											<a href="/projects/aafsgc/index.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/aafsgc/index.html</a>
-										</div>
-									),
-									icon: <img src="/imgs/clientes/aafsgc-logo.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
 								},
 							]}
 						/>
