@@ -85,6 +85,17 @@ export default function DemoOne() {
 									icon: <img src="/imgs/clientes/qbjjc-logo.png" alt="QBJJC Logo" className="w-full h-full object-contain" />,
 								},
 								{
+									id: "lotus-debugger",
+									title: "Lotus Debugger",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Browser storage & memory inspector plugin for React & Next.js</div>
+											<a href="https://github.com/kaioe/lotus-debugger" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://github.com/kaioe/lotus-debugger</a>
+										</div>
+									),
+									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
+								},
+								{
 									id: "ignite",
 									title: "Ignite Travel Group",
 									description: (
@@ -93,7 +104,7 @@ export default function DemoOne() {
 											<a href="https://www.ignitetravel.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://www.ignitetravel.com/</a>
 										</div>
 									),
-									icon: <img src="/imgs/clientes/Ignite-Travel-Group-Logo-black.svg" alt="Ignite Travel Group Logo" className="w-full h-full object-contain" />,
+									icon: <div className="w-full h-full bg-white rounded flex items-center justify-center p-1"><img src="/imgs/clientes/Ignite-Travel-Group-Logo-black.svg" alt="Ignite Travel Group Logo" className="w-full h-full object-contain" /></div>,
 								},
 							{
 								id: "pobsc",
