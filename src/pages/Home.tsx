@@ -190,6 +190,17 @@ export default function DemoOne() {
 									),
 									icon: <img src="/imgs/clientes/cinematic_posters_logo_clean.png" alt="Cinematic Posters Logo" className="w-full h-full object-contain" />,
 								},
+								{
+									id: "reporthub",
+									title: "Report Hub",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> File Management and Report App</div>
+											<a href="http://reporthub.kaioandrade.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">http://reporthub.kaioandrade.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/reporthub-logo.svg" alt="Report Hub" className="w-full h-full object-contain" />,
+								},
 							]}
 						/>
 					</div>
