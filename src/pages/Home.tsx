@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import HyperTextParagraph from "@/components/ui/hyper-text-with-decryption";
 import { motion } from "framer-motion";
 import { MorphingCardStack } from "@/components/ui/morphing-card-stack";
@@ -42,7 +42,7 @@ export default function DemoOne() {
 			{/* Card Container */}
 			<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} className=" hero max-w-4xl w-full relative z-10">
 				{/* Header Pill */}
-				<div className="flex justify-center mb-8">
+				<div className="flex justify-center mb-8 gap-3 flex-wrap">
 					<div className="bg-white border border-gray-200 shadow-sm px-4 py-1.5 rounded-full flex items-center gap-2">
 						<span className="relative flex h-2 w-2">
 							<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -50,6 +50,12 @@ export default function DemoOne() {
 						</span>
 						<span className="text-xs font-bold tracking-widest text-gray-500 uppercase">Kaio Andrade</span>
 					</div>
+					<Link
+						to="/professional-summary"
+						className="bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow-sm px-4 py-1.5 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors uppercase tracking-widest"
+					>
+						Professional Summary
+					</Link>
 				</div>
 
 				{/* Main Content */}

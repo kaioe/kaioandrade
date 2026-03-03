@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import CinematicThemeSwitcher from "@/components/ui/cinematic-theme-switcher";
 import Home from "./pages/Home";
 import FortressSurgicalRedirect from "./pages/FortressSurgicalRedirect";
+import ProfessionalSummary from "./pages/ProfessionalSummary";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/professional-summary" element={<ProfessionalSummary />} />
           <Route path="/projects/fortresssurgical" element={<FortressSurgicalRedirect />} />
         </Routes>
       </Router>
