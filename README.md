@@ -63,6 +63,7 @@ import HyperTextParagraph from "@/components/ui/hyper-text-with-decryption";
 - **Tailwind CSS** - Styling
 - **framer-motion** - Animations
 - **shadcn/ui** - Component library setup
+- **Icons** - Animated icons from [lucide-animated](https://github.com/pqoqubbw/icons) (Motion-based, used in theme switcher, home client cards, morphing card stack demo, prospecting popup)
 
 ## Why `/components/ui`?
 

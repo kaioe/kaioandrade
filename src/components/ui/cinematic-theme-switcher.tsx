@@ -1,6 +1,7 @@
 "use client";
 
-import { Sun, Moon } from "lucide-react";
+import { SunIcon } from "@/components/ui/icons/sun";
+import { MoonIcon } from "@/components/ui/icons/moon";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
@@ -200,8 +201,8 @@ export default function CinematicThemeSwitcher() {
         />
         {/* Background Icons */}
         <div className="absolute inset-0 flex items-center justify-between px-4">
-          <Sun size={20} className={isDark ? 'text-yellow-100' : 'text-amber-600'} />
-          <Moon size={20} className={isDark ? 'text-yellow-100' : 'text-slate-700'} />
+          <SunIcon size={20} className={isDark ? 'text-yellow-100' : 'text-amber-600'} />
+          <MoonIcon size={20} className={isDark ? 'text-yellow-100' : 'text-slate-700'} />
         </div>
 
         {/* Circular Thumb with Bouncy Spring Physics */}
@@ -290,9 +291,9 @@ export default function CinematicThemeSwitcher() {
           {/* Icon */}
           <div className="relative z-10">
             {isDark ? (
-              <Moon size={20} className="text-yellow-200" />
+              <MoonIcon size={20} className="text-yellow-200" />
             ) : (
-              <Sun size={20} className="text-amber-500" />
+              <SunIcon size={20} className="text-amber-500" />
             )}
           </div>
         </motion.div>
