@@ -91,6 +91,17 @@ export default function DemoOne() {
 									icon: <img src="/imgs/clientes/qbjjc-logo.png" alt="QBJJC Logo" className="w-full h-full object-contain" />,
 								},
 								{
+									id: "flipclock",
+									title: "Flip Clock",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> BJJ round timer (flip clock)</div>
+											<a href="/projects/flipclock/flipClock.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/flipclock/flipClock.html</a>
+										</div>
+									),
+									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
+								},
+								{
 									id: "lotus-debugger",
 									title: "Lotus Debugger",
 									description: (

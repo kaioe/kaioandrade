@@ -5,7 +5,7 @@ Route definitions live in `App.tsx`. Each page is a React component in this fold
 ## Home (`/`)
 
 - **File:** `Home.tsx`
-- **Features:** Bio quote with hyper-text decryption, MorphingCardStack for "Job Done" and "Work in Progress" clients, Prospecting Client popup, theme-aware layout.
+- **Features:** Bio quote with hyper-text decryption, MorphingCardStack for "Job Done" and "Work in Progress" clients (including Flip Clock), Prospecting Client popup, theme-aware layout.
 - **Navigation:** Header includes link to Professional Summary.
 
 ## Professional Summary (`/professional-summary`)
