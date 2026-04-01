@@ -156,11 +156,20 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 									}}
 								>
 									{card.id === "cinematic" && <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded transform rotate-12 shadow-lg z-10">Paused</div>}
-									<div className="flex items-start gap-3">
+									<div className="flex flex-col items-start gap-3">
 										{card.icon && <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-foreground">{card.icon}</div>}
-										<div className="min-w-0 flex-1">
+										<div className="min-w-0 w-full">
 											<h3 className="font-semibold text-card-foreground truncate">{card.title}</h3>
-											<div className={cn("text-sm text-muted-foreground mt-1", layout === "stack" && "line-clamp-3", layout === "grid" && "line-clamp-2", layout === "list" && "line-clamp-1")}>{card.description}</div>
+											<div
+												className={cn(
+													"text-sm text-muted-foreground mt-1 break-words overflow-hidden",
+													layout === "stack" && "line-clamp-3",
+													layout === "grid" && "line-clamp-2",
+													layout === "list" && "line-clamp-1"
+												)}
+											>
+												{card.description}
+											</div>
 										</div>
 									</div>
 

@@ -6,6 +6,7 @@ Route definitions live in `App.tsx`. Each page is a React component in this fold
 
 - **File:** `Home.tsx`
 - **Features:** Bio quote with hyper-text decryption, MorphingCardStack for "Job Done" and "Work in Progress" clients (including Flip Clock and Reports Hub), Prospecting Client popup, theme-aware layout.
+- **Project Update:** Job Done/Work In Progress cards now render text content below the logo, with wrapped/clamped text to prevent overflow exposure.
 - **Project Update:** Reports Hub card now points to `https://reportshub.net/`.
 - **Navigation:** Header includes link to Professional Summary.
 
@@ -23,4 +24,4 @@ Route definitions live in `App.tsx`. Each page is a React component in this fold
 
 ---
 
-*Last updated: 2026-04-01 23:45:40 +10:00*
+*Last updated: 2026-04-01 23:48:37 +10:00*
