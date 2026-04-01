@@ -32,6 +32,19 @@ const layoutIcons = {
 
 const SWIPE_THRESHOLD = 50;
 
+function hashString(value: string): number {
+	let hash = 0;
+	for (let i = 0; i < value.length; i++) {
+		hash = (hash << 5) - hash + value.charCodeAt(i);
+		hash |= 0;
+	}
+	return Math.abs(hash);
+}
+
+function normalizedSeed(value: string): number {
+	return (hashString(value) % 1000) / 1000;
+}
+
 export function MorphingCardStack({ cards = [], className, defaultLayout = "stack", onCardClick }: MorphingCardStackProps) {
 	const [layout, setLayout] = useState<LayoutMode>(defaultLayout);
 	const [expandedCard, setExpandedCard] = useState<string | null>(null);
@@ -65,14 +78,30 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 		return reordered.reverse(); // Reverse so top card renders last (on top)
 	};
 
-	const getLayoutStyles = (stackPosition: number) => {
+	const getLayoutStyles = (stackPosition: number, cardId: string) => {
 		switch (layout) {
 			case "stack":
+				if (stackPosition === 0) {
+					return {
+						top: 0,
+						left: 0,
+						zIndex: cards.length,
+						rotate: -2,
+					};
+				}
+
+				// Deterministic pseudo-random spread so the pile looks scrambled.
+				const spread = Math.min(14 + stackPosition * 3, 32);
+				const verticalNudge = 4 + stackPosition * 3;
+				const randX = (normalizedSeed(`${cardId}-${activeIndex}-x`) - 0.5) * spread * 2;
+				const randY = (normalizedSeed(`${cardId}-${activeIndex}-y`) - 0.5) * spread * 1.4 + verticalNudge;
+				const randRotate = (normalizedSeed(`${cardId}-${activeIndex}-r`) - 0.5) * 18;
+
 				return {
-					top: stackPosition * 8,
-					left: stackPosition * 8,
+					top: randY,
+					left: randX,
 					zIndex: cards.length - stackPosition,
-					rotate: (stackPosition - 1) * 2,
+					rotate: randRotate,
 				};
 			case "grid":
 				return {
@@ -118,7 +147,7 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 				<motion.div layout className={cn(containerStyles[layout], "mx-auto")}>
 					<AnimatePresence mode="popLayout">
 						{displayCards.map((card) => {
-							const styles = getLayoutStyles(card.stackPosition);
+							const styles = getLayoutStyles(card.stackPosition, card.id);
 							const isExpanded = expandedCard === card.id;
 							const isTopCard = layout === "stack" && card.stackPosition === 0;
 
