@@ -62,7 +62,7 @@
 			<div class="preset-modal__backdrop" data-preset-close tabindex="-1"></div>
 			<div class="preset-modal__panel" role="dialog" aria-modal="true" aria-labelledby="preset-modal-title">
 				<header class="preset-modal__header">
-					<h2 id="preset-modal-title">Preset timers</h2>
+					<h2 id="preset-modal-title">Settings</h2>
 					<div class="preset-modal__header-actions">
 						<button type="button" class="preset-modal__icon-btn" id="preset-settings-open-btn" aria-expanded="false" aria-controls="preset-settings-frame" title="Timer settings" aria-label="Timer settings">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -234,7 +234,8 @@
 					</div>
 
 					<div class="preset-table-wrap">
-						<table class="preset-table" aria-label="Saved presets">
+						<h3 id="preset-table-heading" class="preset-table-wrap__title">Preset Timers</h3>
+						<table class="preset-table" aria-labelledby="preset-table-heading">
 							<thead>
 								<tr>
 									<th scope="col">Name</th>
@@ -248,7 +249,9 @@
 						</table>
 					</div>
 
-					<form id="preset-form" class="preset-form" novalidate onsubmit="return false;">
+					<div class="preset-form-container">
+						<h3 id="preset-form-heading" class="preset-form-container__title">New Timer</h3>
+						<form id="preset-form" class="preset-form" novalidate onsubmit="return false;" aria-labelledby="preset-form-heading">
 						<input type="hidden" id="preset-edit-id" value="" />
 						<div class="preset-form__row preset-form__row--name-color">
 							<div class="preset-form__field preset-form__field--name">
@@ -318,10 +321,11 @@
 							</div>
 						</div>
 						<div class="preset-form__actions">
-							<button type="button" class="preset-btn preset-btn--primary" id="preset-save-btn">Add preset</button>
+							<button type="button" class="preset-btn preset-btn--primary" id="preset-save-btn">Save timer</button>
 							<button type="button" class="preset-btn preset-btn--ghost" id="preset-form-reset" hidden>Cancel edit</button>
 						</div>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

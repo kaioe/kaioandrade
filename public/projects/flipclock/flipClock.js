@@ -2543,6 +2543,7 @@
 		applyTrackMaxToSliders();
 		var $editId = $("#preset-edit-id");
 		var $saveBtn = $("#preset-save-btn");
+		var $presetFormHeading = $("#preset-form-heading");
 		var $resetEdit = $("#preset-form-reset");
 		var $openBtn = $("#preset-open-btn");
 		var $settingsFrame = $("#preset-settings-frame");
@@ -3096,6 +3097,14 @@
 
 		var PRESET_PANEL_DRAG_PAD = 16;
 
+		function isPresetModalMobilePortraitFullscreen() {
+			try {
+				return window.matchMedia("(max-width: 767px) and (orientation: portrait)").matches;
+			} catch (e) {
+				return window.innerWidth <= 767 && window.innerHeight >= window.innerWidth;
+			}
+		}
+
 		function clampPresetPanelPosition(left, top) {
 			var el = $panel[0];
 			var w = el.offsetWidth;
@@ -3117,6 +3126,17 @@
 		}
 
 		function centerPresetModalPanel() {
+			if (isPresetModalMobilePortraitFullscreen()) {
+				$panel.css({
+					left: "0",
+					top: "0",
+					right: "0",
+					bottom: "0",
+					margin: "0",
+					transform: "none",
+				});
+				return;
+			}
 			var el = $panel[0];
 			var w = el.offsetWidth;
 			var vw = window.innerWidth;
@@ -3196,6 +3216,9 @@
 		}
 
 		$presetModalHeader.on("mousedown.presetModalPanelDrag", function (e) {
+			if (isPresetModalMobilePortraitFullscreen()) {
+				return;
+			}
 			if (e.button !== 0) {
 				return;
 			}
@@ -3218,6 +3241,9 @@
 		});
 
 		$presetModalHeader.on("touchstart.presetModalPanelDrag", function (e) {
+			if (isPresetModalMobilePortraitFullscreen()) {
+				return;
+			}
 			if ($(e.target).closest("button, a, input, select, textarea, label").length) {
 				return;
 			}
@@ -3241,6 +3267,10 @@
 
 		$(window).on("resize.presetModalPanel", function () {
 			if ($modal.is("[hidden]")) {
+				return;
+			}
+			if (isPresetModalMobilePortraitFullscreen()) {
+				centerPresetModalPanel();
 				return;
 			}
 			var cur = $panel[0].getBoundingClientRect();
@@ -3280,7 +3310,8 @@
 			syncPresetMultiSlider();
 			setPresetColorUi("#ffffff");
 			closeColorPopover();
-			$saveBtn.text("Add preset");
+			$presetFormHeading.text("New Timer");
+			$saveBtn.text("Save timer");
 			$resetEdit.attr("hidden", "hidden");
 		}
 
@@ -3303,7 +3334,8 @@
 			$interval.val(p.intervalMinutes);
 			$rounds.val(p.rounds);
 			syncPresetMultiSlider();
-			$saveBtn.text("Save changes");
+			$presetFormHeading.text("Edit Timer");
+			$saveBtn.text("Save timer");
 			$resetEdit.removeAttr("hidden");
 		}
 
