@@ -17,22 +17,22 @@ app.use(bodyParser.json());
 // Debug Configuration
 console.log('\n🔍 --- Configuration Check ---');
 console.log(`Port: ${PORT}`);
-console.log(`Email Service: SendGrid SMTP`);
+console.log(`Email Service: Brevo SMTP`);
 console.log('-----------------------------\n');
 
 // Email configuration
 const getEmailConfig = () => {
-  if (!process.env.SENDGRID_API_KEY) {
-    console.warn('⚠️  SENDGRID_API_KEY is missing in .env');
+  if (!process.env.BREVO_SMTP_KEY) {
+    console.warn('⚠️  BREVO_SMTP_KEY is missing in .env');
   }
 
   return {
-    host: 'smtp.sendgrid.net',
+    host: 'smtp-relay.brevo.com',
     port: 587,
     secure: false, // TLS
     auth: {
-      user: 'apikey', // SendGrid always uses 'apikey'
-      pass: process.env.SENDGRID_API_KEY
+      user: process.env.BREVO_SMTP_USER,
+      pass: process.env.BREVO_SMTP_KEY
     }
   };
 };
@@ -45,9 +45,9 @@ let transporter = createTransporter();
 transporter.verify((error, success) => {
   if (error) {
     console.warn('⚠️  SMTP Connection Warning:', error.message);
-    console.log('👉 Make sure SENDGRID_API_KEY is valid and your SendGrid account is active.');
+    console.log('👉 Make sure BREVO_SMTP_KEY and BREVO_SMTP_USER are valid and your Brevo account is active.');
   } else {
-    console.log('✅ Connected to SendGrid SMTP successfully');
+    console.log('✅ Connected to Brevo SMTP successfully');
   }
 });
 
@@ -75,8 +75,8 @@ app.post('/api/send-email', async (req, res) => {
     // Refresh transporter with current config (in case .env changed)
     const requestTransporter = nodemailer.createTransport(getEmailConfig());
 
-    // SendGrid requires a verified sender address
-    const fromEmail = process.env.CONTACT_EMAIL || process.env.GMAIL_USER || 'no-reply@kaioandrade.com';
+    // Brevo requires a verified sender address
+    const fromEmail = process.env.CONTACT_EMAIL || 'contact@kaioandrade.com';
     const toEmail = process.env.GMAIL_USER || 'kaioed@gmail.com';
 
     const mailOptions = {
@@ -95,7 +95,7 @@ app.post('/api/send-email', async (req, res) => {
             ${message.replace(/\n/g, '<br>')}
           </p>
           <p style="color: #666; font-size: 12px; margin-top: 20px;">
-            This email was sent via SendGrid SMTP from your portfolio.
+            This email was sent via Brevo SMTP from your portfolio.
           </p>
         </div>
       `,
@@ -130,7 +130,7 @@ app.post('/api/send-email', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Email Server Running (SendGrid SMTP Mode)');
+  res.send('Email Server Running (Brevo SMTP Mode)');
 });
 
 app.listen(PORT, () => {
