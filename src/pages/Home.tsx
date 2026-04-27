@@ -96,7 +96,7 @@ export default function DemoOne() {
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> BJJ round timer (flip clock)</div>
-											<a href="/projects/flipclock/flipClock.html" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/flipclock/flipClock.html</a>
+											<a href="https://kaioe.github.io/fliptimer/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://kaioe.github.io/fliptimer/</a>
 										</div>
 									),
 									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
