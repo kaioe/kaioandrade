@@ -92,7 +92,7 @@ export default function DemoOne() {
 								},
 								{
 									id: "flipclock",
-									title: "Flip Clock",
+									title: "Flip Timer",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> BJJ round timer (flip clock)</div>
