@@ -80,7 +80,7 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 
 	const getLayoutStyles = (stackPosition: number, cardId: string) => {
 		switch (layout) {
-			case "stack":
+			case "stack": {
 				if (stackPosition === 0) {
 					return {
 						top: 0,
@@ -103,6 +103,7 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 					zIndex: cards.length - stackPosition,
 					rotate: randRotate,
 				};
+			}
 			case "grid":
 				return {
 					top: 0,
