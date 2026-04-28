@@ -253,7 +253,7 @@ export default function DemoOne() {
 											<a href="https://www.goldcoastnativegardening.com.au/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://www.goldcoastnativegardening.com.au/</a>
 										</div>
 									),
-									icon: <img src="/imgs/clientes/goldcoastnativegardening.jpg" alt="Gold Coast Native Gardening Logo" className="w-full h-full object-contain rounded" />,
+									icon: <img src="/imgs/clientes/goldcoastnativegardening-logo.webp" alt="Gold Coast Native Gardening Logo" className="w-full h-full object-contain rounded" />,
 								},
 							]}
 						/>
