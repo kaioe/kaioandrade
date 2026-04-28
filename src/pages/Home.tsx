@@ -177,6 +177,17 @@ export default function DemoOne() {
 									description: "Designing scalable and maintainable software architectures for complex business needs.",
 									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
 								},
+								{
+									id: "reporthub",
+									title: "Reports Hub",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> File Management and Report App</div>
+											<a href="https://reportshub.net/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://reportshub.net/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/reporthub-logo.svg" alt="Reports Hub" className="w-full h-full object-contain" />,
+								},
 							]}
 						/>
 					</div>
@@ -215,17 +226,6 @@ export default function DemoOne() {
 										</div>
 									),
 									icon: <img src="/imgs/clientes/cinematic_posters_logo_clean.png" alt="Cinematic Posters Logo" className="w-full h-full object-contain" />,
-								},
-								{
-									id: "reporthub",
-									title: "Reports Hub",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> File Management and Report App</div>
-											<a href="https://reportshub.net/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://reportshub.net/</a>
-										</div>
-									),
-									icon: <img src="/imgs/clientes/reporthub-logo.svg" alt="Reports Hub" className="w-full h-full object-contain" />,
 								},
 							]}
 						/>
