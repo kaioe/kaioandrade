@@ -69,10 +69,9 @@ export default function DemoOne() {
 				<div className="mt-8 flex justify-center">
 					<div
 						onClick={() => setIsPopupOpen(true)}
-						className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/40 shadow-sm cursor-pointer hover:bg-white/80 transition-all duration-200 flex flex-col items-center gap-2"
+						className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl border border-white/40 shadow-sm cursor-pointer hover:bg-white/80 transition-all duration-200 flex flex-col items-center justify-center"
 					>
-						<BotMessageSquareIcon className="w-10 h-10 text-slate-700" size={40} />
-						<span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest text-center">Prospecting<br/>Client</span>
+						<BotMessageSquareIcon className="w-12 h-12 text-slate-700" size={48} />
 					</div>
 				</div>
 			</motion.div>
@@ -233,7 +232,15 @@ export default function DemoOne() {
 					</div>
 				</motion.div>
 
-
+				{/* Prospecting Client Container */}
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+					className="flex flex-col items-center md:items-start gap-6 w-full md:w-auto"
+				>
+					<h3 className="text-gray-400 font-mono text-sm tracking-widest uppercase">Prospecting Client</h3>
+				</motion.div>
 			</div>
 
 			<ProspectingClientPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
