@@ -240,24 +240,6 @@ export default function DemoOne() {
 					className="flex flex-col items-center md:items-start gap-6 w-full md:w-auto"
 				>
 					<h3 className="text-gray-400 font-mono text-sm tracking-widest uppercase">Prospecting Client</h3>
-					<div className="w-full max-w-sm">
-						<MorphingCardStack
-							defaultLayout="list"
-							cards={[
-								{
-									id: "castlesurgical",
-									title: "Castle Surgical",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Website Redesign Prototype</div>
-											<a href="/projects/castlesurgical" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">/projects/castlesurgical</a>
-										</div>
-									),
-									icon: <div className="w-full h-full bg-slate-800 rounded flex items-center justify-center p-1"><span className="text-white font-bold text-[10px] uppercase text-center leading-tight">Castle<br/>Surgical</span></div>,
-								},
-							]}
-						/>
-					</div>
 				</motion.div>
 			</div>
 
