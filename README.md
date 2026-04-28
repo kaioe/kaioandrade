@@ -14,7 +14,7 @@ This is a Next.js project with TypeScript, Tailwind CSS, and shadcn/ui component
 |-------|------|-------------|
 | `/` | Home | Portfolio landing with bio, client cards (Job Done, Work in Progress, Prospecting Client) |
 | `/professional-summary` | Professional Summary | Senior IT Consultant summary: experience, specializations, strategic guidance |
-| `/projects/fortresssurgical` | Fortress Surgical Redirect | Redirects to legacy project static site |
+| `/projects/castlesurgical` | Castle Surgical Redirect | Redirects to legacy project static site |
 
 **Professional Summary** (added 2026-03-03): Displays your Senior IT Consultant profile — strategic mindset, hands-on approach, specializations (cloud, React/Next.js, APIs, Stripe, DevOps, technical planning), and closing belief on technology impact. Styled to match the site (glassmorphism card, motion). Accessible from the Home header via "Professional Summary" link; includes back link to home.
 

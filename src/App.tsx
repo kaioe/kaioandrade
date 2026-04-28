@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import CinematicThemeSwitcher from "@/components/ui/cinematic-theme-switcher";
 import Home from "./pages/Home";
-import FortressSurgicalRedirect from "./pages/FortressSurgicalRedirect";
+import CastleSurgicalRedirect from "./pages/CastleSurgicalRedirect";
 import ProfessionalSummary from "./pages/ProfessionalSummary";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/professional-summary" element={<ProfessionalSummary />} />
-          <Route path="/projects/fortresssurgical" element={<FortressSurgicalRedirect />} />
+          <Route path="/projects/castlesurgical" element={<CastleSurgicalRedirect />} />
         </Routes>
       </Router>
       {/* Fixed theme switcher in top‑right corner */}

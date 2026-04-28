@@ -17,10 +17,10 @@ Route definitions live in `App.tsx`. Each page is a React component in this fold
 - **Rules:** Content is static; specializations are kept in an array for easy edits.
 - **Navigation:** "← Kaio Andrade" pill and "← Back to home" link return to Home.
 
-## Fortress Surgical Redirect (`/projects/fortresssurgical`)
+## Castle Surgical Redirect (`/projects/castlesurgical`)
 
-- **File:** `FortressSurgicalRedirect.tsx`
-- **Features:** Client-side redirect to legacy static project (`/projects/fortresssurgical/index.html`).
+- **File:** `CastleSurgicalRedirect.tsx`
+- **Features:** Client-side redirect to legacy static project (`/projects/castlesurgical/index.html`).
 
 ---
 
