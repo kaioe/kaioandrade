@@ -64,7 +64,7 @@ export default function DemoOne() {
 				</div>
 
 				{/* Footer */}
-				<p className="text-center mt-8 text-gray-400 text-sm font-mono">IT/AI Consultant</p>
+				<p className="text-center mt-8 text-gray-400 text-[1.5rem] font-mono">IT/AI Consultant</p>
 
 				<div className="mt-8 flex justify-center">
 					<div
