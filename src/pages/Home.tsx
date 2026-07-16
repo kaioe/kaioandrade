@@ -199,6 +199,17 @@ export default function DemoOne() {
 									),
 									icon: <img src="/imgs/clientes/reporthub-logo.svg" alt="Reports Hub" className="w-full h-full object-contain" />,
 								},
+								{
+									id: "languagetool",
+									title: "LanguageTool",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Self-Hosted Grammar & Spell Checker</div>
+											<a href="https://languagetool.kaioandrade.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://languagetool.kaioandrade.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/languagetool-logo.png" alt="LanguageTool" className="w-full h-full object-contain" />,
+								},
 							]}
 						/>
 					</div>
