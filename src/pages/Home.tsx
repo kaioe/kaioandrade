@@ -163,7 +163,7 @@ export default function DemoOne() {
 								{
 									id: "ignite",
 									title: "Ignite Travel Group",
-									dateAdded: "Jan 2026",
+									dateAdded: "Jul 2016",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> Frontend Senior Developer</div>
@@ -199,7 +199,7 @@ export default function DemoOne() {
 								{
 									id: "qbjjc",
 									title: "Queensland BJJ Circuit",
-									dateAdded: "Jan 2026",
+									dateAdded: "May 2014",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> Event Management System & Website</div>
