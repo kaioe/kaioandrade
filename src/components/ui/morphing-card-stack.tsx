@@ -134,7 +134,9 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 	const parseDate = (d?: string) => {
 		if (!d) return "0000-00";
 		const months: Record<string, string> = { Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06", Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12" };
-		const [m, y] = d.split(" ");
+		const parts = d.split(" ");
+		if (parts.length === 1) return `${parts[0]}-00`; // year-only e.g. "2013"
+		const [m, y] = parts;
 		return `${y}-${months[m] || "00"}`;
 	};
 	const sortedDisplay = [...displayCards].sort((a, b) => parseDate(b.dateAdded).localeCompare(parseDate(a.dateAdded)));

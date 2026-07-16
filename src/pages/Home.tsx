@@ -175,7 +175,7 @@ export default function DemoOne() {
 								{
 									id: "pobsc",
 									title: "Point of Balance Sports Centre",
-									dateAdded: "Jan 2026",
+									dateAdded: "Oct 2024",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> Multi Sites Platform</div>
@@ -240,7 +240,7 @@ export default function DemoOne() {
 								{
 									id: "cinematic-posters",
 									title: "Cinematic Posters",
-									dateAdded: "Jan 2026",
+									dateAdded: "Feb 2025",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> AI Based App</div>
@@ -252,7 +252,7 @@ export default function DemoOne() {
 								{
 									id: "bjjlc",
 									title: "BJJ Lotus Club",
-									dateAdded: "Jan 2026",
+									dateAdded: "2013",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> Online Community Platform</div>
