@@ -15,6 +15,7 @@ export interface CardData {
 	description: ReactNode;
 	icon?: ReactNode;
 	color?: string;
+	dateAdded?: string; // e.g. "Jul 2026" — shows as a badge and drives sort order
 }
 
 export interface MorphingCardStackProps {
@@ -129,6 +130,15 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 
 	const displayCards = layout === "stack" ? getStackOrder() : cards.map((c, i) => ({ ...c, stackPosition: i }));
 
+	// Sort by dateAdded descending (most recent first), undefined dates (service cards) go last
+	const parseDate = (d?: string) => {
+		if (!d) return "0000-00";
+		const months: Record<string, string> = { Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06", Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12" };
+		const [m, y] = d.split(" ");
+		return `${y}-${months[m] || "00"}`;
+	};
+	const sortedDisplay = [...displayCards].sort((a, b) => parseDate(b.dateAdded).localeCompare(parseDate(a.dateAdded)));
+
 	return (
 		<div className={cn("space-y-4", className)}>
 			{/* Layout Toggle */}
@@ -147,7 +157,7 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 			<LayoutGroup>
 				<motion.div layout className={cn(containerStyles[layout], "mx-auto")}>
 					<AnimatePresence mode="popLayout">
-						{displayCards.map((card) => {
+						{sortedDisplay.map((card) => {
 							const styles = getLayoutStyles(card.stackPosition, card.id);
 							const isExpanded = expandedCard === card.id;
 							const isTopCard = layout === "stack" && card.stackPosition === 0;
@@ -189,7 +199,12 @@ export function MorphingCardStack({ cards = [], className, defaultLayout = "stac
 									<div className="flex flex-col items-start gap-3">
 										{card.icon && <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-foreground">{card.icon}</div>}
 										<div className="min-w-0 w-full">
-											<h3 className="font-semibold text-card-foreground truncate">{card.title}</h3>
+											<div className="flex items-center gap-2">
+												<h3 className="font-semibold text-card-foreground truncate">{card.title}</h3>
+												{card.dateAdded && (
+													<span className="shrink-0 text-[10px] font-mono text-muted-foreground/60 border border-border rounded px-1.5 py-0.5 leading-none">{card.dateAdded}</span>
+												)}
+											</div>
 											<div
 												className={cn(
 													"text-sm text-muted-foreground mt-1 break-words overflow-hidden",

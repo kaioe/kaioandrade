@@ -89,8 +89,21 @@ export default function DemoOne() {
 						<MorphingCardStack
 							cards={[
 								{
+									id: "languagetool",
+									title: "LanguageTool",
+									dateAdded: "Jul 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Self-Hosted Grammar & Spell Checker</div>
+											<a href="https://languagetool.kaioandrade.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://languagetool.kaioandrade.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/languagetool-logo.png" alt="LanguageTool" className="w-full h-full object-contain" />,
+								},
+								{
 									id: "gc-native-gardening",
 									title: "Gold Coast Native Gardening",
+									dateAdded: "Apr 2026",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> Redesign/Optimisation</div>
@@ -100,19 +113,9 @@ export default function DemoOne() {
 									icon: <img src="/imgs/clientes/goldcoastnativegardening-logo.webp" alt="Gold Coast Native Gardening Logo" className="w-full h-full object-contain rounded" />,
 								},
 								{
-									id: "qbjjc",
-									title: "Queensland BJJ Circuit",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Event Management System & Website</div>
-											<a href="http://qbjjc.com.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">http://qbjjc.com.au</a>
-										</div>
-									),
-									icon: <img src="/imgs/clientes/qbjjc-logo.png" alt="QBJJC Logo" className="w-full h-full object-contain" />,
-								},
-								{
 									id: "flipclock",
 									title: "Flip Timer",
+									dateAdded: "Mar 2026",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> BJJ round timer (flip clock)</div>
@@ -122,75 +125,9 @@ export default function DemoOne() {
 									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
 								},
 								{
-									id: "lotus-debugger",
-									title: "Lotus Debugger",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Browser storage & memory inspector plugin for React & Next.js</div>
-											<a href="https://github.com/kaioe/lotus-debugger" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://github.com/kaioe/lotus-debugger</a>
-										</div>
-									),
-									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
-								},
-								{
-									id: "ignite",
-									title: "Ignite Travel Group",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Frontend Senior Developer</div>
-											<a href="https://www.ignitetravel.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://www.ignitetravel.com/</a>
-										</div>
-									),
-									icon: <div className="w-full h-full bg-white rounded flex items-center justify-center p-1"><img src="/imgs/clientes/Ignite-Travel-Group-Logo-black.svg" alt="Ignite Travel Group Logo" className="w-full h-full object-contain" /></div>,
-								},
-							{
-								id: "pobsc",
-								title: "Point of Balance Sports Centre",
-								description: (
-									<div className="flex flex-col gap-1 text-xs">
-										<div><span className="font-semibold">Job:</span> Multi Sites Platform</div>
-										<a href="https://pointofbalancesportscentre.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://pointofbalancesportscentre.com/</a>
-									</div>
-								),
-								icon: <img src="/imgs/clientes/pobsc-logo.jpg" alt="POBSC Logo" className="w-full h-full object-contain" />,
-							},
-							{
-								id: "martial-arts-logbook",
-								title: "Martial Arts Logbook",
-								description: (
-									<div className="flex flex-col gap-1 text-xs">
-										<div><span className="font-semibold">Job:</span> Online Shop & Website</div>
-										<a href="https://martialartslogbooks.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://martialartslogbooks.com/</a>
-									</div>
-								),
-								icon: <img src="/imgs/clientes/martial-arts-logbook-logo.png" alt="Martial Arts Logbook Logo" className="w-full h-full object-contain" />,
-							},
-							{
-								id: "aafsgc",
-								title: "Accurate Accounting & Financial Services",
-								description: (
-									<div className="flex flex-col gap-1 text-xs">
-										<div><span className="font-semibold">Job:</span> Institutional Website & SEO</div>
-										<a href="https://aafsgc.com.au/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://aafsgc.com.au/</a>
-									</div>
-								),
-								icon: <img src="/imgs/clientes/aafsgc-logo.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
-							},
-							{
-								id: "web-dev",
-								title: "Web Development",
-								description: "Full-stack development using modern technologies like React, Node.js, and TypeScript.",
-								icon: <EarthIcon className="w-full h-full text-slate-700" size={40} />,
-							},
-								{
-									id: "architecture",
-									title: "System Architecture",
-									description: "Designing scalable and maintainable software architectures for complex business needs.",
-									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
-								},
-								{
 									id: "reporthub",
 									title: "Reports Hub",
+									dateAdded: "Feb 2026",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> File Management and Report App</div>
@@ -200,15 +137,88 @@ export default function DemoOne() {
 									icon: <img src="/imgs/clientes/reporthub-logo.svg" alt="Reports Hub" className="w-full h-full object-contain" />,
 								},
 								{
-									id: "languagetool",
-									title: "LanguageTool",
+									id: "lotus-debugger",
+									title: "Lotus Debugger",
+									dateAdded: "Feb 2026",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Self-Hosted Grammar & Spell Checker</div>
-											<a href="https://languagetool.kaioandrade.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://languagetool.kaioandrade.com/</a>
+											<div><span className="font-semibold">Job:</span> Browser storage & memory inspector plugin for React & Next.js</div>
+											<a href="https://github.com/kaioe/lotus-debugger" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://github.com/kaioe/lotus-debugger</a>
 										</div>
 									),
-									icon: <img src="/imgs/clientes/languagetool-logo.png" alt="LanguageTool" className="w-full h-full object-contain" />,
+									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
+								},
+								{
+									id: "aafsgc",
+									title: "Accurate Accounting & Financial Services",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Institutional Website & SEO</div>
+											<a href="https://aafsgc.com.au/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://aafsgc.com.au/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/aafsgc-logo.png" alt="Accurate Accounting & Financial Services Gold Coast Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "ignite",
+									title: "Ignite Travel Group",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Frontend Senior Developer</div>
+											<a href="https://www.ignitetravel.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://www.ignitetravel.com/</a>
+										</div>
+									),
+									icon: <div className="w-full h-full bg-white rounded flex items-center justify-center p-1"><img src="/imgs/clientes/Ignite-Travel-Group-Logo-black.svg" alt="Ignite Travel Group Logo" className="w-full h-full object-contain" /></div>,
+								},
+								{
+									id: "pobsc",
+									title: "Point of Balance Sports Centre",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Multi Sites Platform</div>
+											<a href="https://pointofbalancesportscentre.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://pointofbalancesportscentre.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/pobsc-logo.jpg" alt="POBSC Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "martial-arts-logbook",
+									title: "Martial Arts Logbook",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Online Shop & Website</div>
+											<a href="https://martialartslogbooks.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://martialartslogbooks.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/martial-arts-logbook-logo.png" alt="Martial Arts Logbook Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "qbjjc",
+									title: "Queensland BJJ Circuit",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Event Management System & Website</div>
+											<a href="http://qbjjc.com.au" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">http://qbjjc.com.au</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/qbjjc-logo.png" alt="QBJJC Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "web-dev",
+									title: "Web Development",
+									description: "Full-stack development using modern technologies like React, Node.js, and TypeScript.",
+									icon: <EarthIcon className="w-full h-full text-slate-700" size={40} />,
+								},
+								{
+									id: "architecture",
+									title: "System Architecture",
+									description: "Designing scalable and maintainable software architectures for complex business needs.",
+									icon: <CpuIcon className="w-full h-full text-slate-700" size={40} />,
 								},
 							]}
 						/>
@@ -228,19 +238,9 @@ export default function DemoOne() {
 							defaultLayout="list"
 							cards={[
 								{
-									id: "bjjlc",
-									title: "BJJ Lotus Club",
-									description: (
-										<div className="flex flex-col gap-1 text-xs">
-											<div><span className="font-semibold">Job:</span> Online Community Platform</div>
-											<a href="https://bjjlotusclub.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://bjjlotusclub.com/</a>
-										</div>
-									),
-									icon: <img src="/imgs/clientes/bjjlc-logo-stamp.png" alt="BJJLC Logo" className="w-full h-full object-contain" />,
-								},
-								{
 									id: "cinematic-posters",
 									title: "Cinematic Posters",
+									dateAdded: "Jan 2026",
 									description: (
 										<div className="flex flex-col gap-1 text-xs">
 											<div><span className="font-semibold">Job:</span> AI Based App</div>
@@ -248,6 +248,18 @@ export default function DemoOne() {
 										</div>
 									),
 									icon: <img src="/imgs/clientes/cinematic_posters_logo_clean.png" alt="Cinematic Posters Logo" className="w-full h-full object-contain" />,
+								},
+								{
+									id: "bjjlc",
+									title: "BJJ Lotus Club",
+									dateAdded: "Jan 2026",
+									description: (
+										<div className="flex flex-col gap-1 text-xs">
+											<div><span className="font-semibold">Job:</span> Online Community Platform</div>
+											<a href="https://bjjlotusclub.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline z-50 relative pointer-events-auto">https://bjjlotusclub.com/</a>
+										</div>
+									),
+									icon: <img src="/imgs/clientes/bjjlc-logo-stamp.png" alt="BJJLC Logo" className="w-full h-full object-contain" />,
 								},
 							]}
 						/>
