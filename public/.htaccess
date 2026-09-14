@@ -9,6 +9,9 @@ RewriteEngine On
 # (URL->filename phase, before mod_dir runs) with no redirect at all.
 RewriteRule ^privacy/?$ /privacy.html [L]
 
+# Same treatment for /terms — served directly, no redirect (see note above).
+RewriteRule ^terms/?$ /terms.html [L]
+
 # Convenience: /professional-summary and other client-side routes are served by the
 # SPA shell. Kept explicit (and last) so real files/dirs always win first.
 RewriteCond %{REQUEST_FILENAME} !-f

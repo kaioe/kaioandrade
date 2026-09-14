@@ -74,7 +74,22 @@ export default function DemoOne() {
 						<BotMessageSquareIcon className="w-12 h-12 text-slate-700" size={48} />
 					</div>
 				</div>
-			</motion.div>
+
+				{/* Legal links — plain anchors: these are static files, not SPA routes */}
+				<nav className="mt-10 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs font-mono tracking-widest uppercase">
+					<a href="/privacy" className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+						Privacy Policy
+					</a>
+					<span className="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
+					<a href="/terms" className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+						Terms of Service
+					</a>
+				</nav>
+
+				<p className="text-center mt-4 text-gray-400 text-xs font-mono">
+					&copy; {new Date().getFullYear()} Kaio Andrade
+				</p>
+				</motion.div>
 
 			<div className="mt-12 w-full max-w-6xl flex flex-wrap justify-center items-start gap-12 relative z-10">
 				{/* Former Clients Container */}

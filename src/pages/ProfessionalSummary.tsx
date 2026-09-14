@@ -81,6 +81,21 @@ export default function ProfessionalSummary() {
 						← Back to home
 					</Link>
 				</p>
+
+				{/* Legal links — plain anchors: these are static files, not SPA routes */}
+				<nav className="mt-10 flex flex-wrap justify-center items-center gap-x-3 gap-y-2 text-xs font-mono tracking-widest uppercase">
+					<a href="/privacy" className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+						Privacy Policy
+					</a>
+					<span className="text-gray-300 dark:text-gray-600" aria-hidden="true">·</span>
+					<a href="/terms" className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 transition-colors">
+						Terms of Service
+					</a>
+				</nav>
+
+				<p className="text-center mt-4 text-gray-400 text-xs font-mono">
+					&copy; {new Date().getFullYear()} Kaio Andrade
+				</p>
 			</motion.div>
 		</div>
 	);
