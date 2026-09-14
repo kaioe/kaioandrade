@@ -1,0 +1,16 @@
+# kaioandrade.com — Apache rewrite rules (deployed from dist/)
+
+RewriteEngine On
+
+# Serve /privacy as a static file directly.
+# Without this, Apache's mod_dir issues a 301 adding the trailing slash, and that
+# Location header is built on http:// — which downgrades an https request. Google's
+# OAuth consent screen requires the privacy URL to be https, so resolve it here
+# (URL->filename phase, before mod_dir runs) with no redirect at all.
+RewriteRule ^privacy/?$ /privacy.html [L]
+
+# Convenience: /professional-summary and other client-side routes are served by the
+# SPA shell. Kept explicit (and last) so real files/dirs always win first.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^professional-summary/?$ /index.html [L]
